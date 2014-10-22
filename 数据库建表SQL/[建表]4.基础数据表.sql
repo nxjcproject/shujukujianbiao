@@ -39,18 +39,18 @@ CREATE TABLE [dbo].[system_AlarmCycle](                     					-- 能耗报警报警
 )
 GO
 
-CREATE TABLE [dbo].[system_KPI](													-- KPI对比指标维护表
-    [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,								-- 主键ID
-	[StandardCategory] [char](20) NULL,                     						-- 标准类型
-	[Clinker_ComparableComprehensiveStandardCoalConsumption] [decimal](18, 4) NULL,	-- 可比熟料综合煤耗限定值
-	[Clinker_ComparableComprehensiveElectricityConsumption] [decimal](18, 4) NULL, 	-- 可比熟料综合电耗限定值
-	[Cement_ComparableComprehensiveElectricityConsumption]  [decimal](18, 4) NULL, 	-- 可比水泥综合电耗限定值
-	[Clinker_ComparableComprehensiveEnergyConsumption]  [decimal](18, 4) NULL,     	-- 可比熟料综合能耗限定值
-	[Cement_ComparableComprehensiveEnergyConsumption]  [decimal](18, 4) NULL,      	-- 可比水泥综合能耗限定值
-	[RawBatch_ElectricityConsumption] [decimal](18, 4) NULL,                       	-- 生料制备工段电耗
-	[Clinker_CoalConsumption] [decimal](18, 4) NULL,                               	-- 熟料烧成工段煤耗
-	[Clinker_ElectricityConsumption] [decimal](18, 4) NULL,                        	-- 熟料烧成工段电耗
-	[Cement_ElectricityConsumption] [decimal](18, 4) NULL                         	-- 水泥制备工段电耗
+CREATE TABLE [dbo].[system_KPI](												-- KPI对比指标维护表
+    [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,							-- 主键ID
+	[StandardCategory] [char](20) NULL,                     					-- 标准类型
+	[Clinker_ComparableComprehensiveStandardCoalConsumption] [decimal](8, 2) NULL,-- 可比熟料综合煤耗限定值
+	[Clinker_ComparableComprehensiveElectricityConsumption] [decimal](8, 2) NULL, -- 可比熟料综合电耗限定值
+	[Cement_ComparableComprehensiveElectricityConsumption]  [decimal](8, 2) NULL, -- 可比水泥综合电耗限定值
+	[Clinker_ComparableComprehensiveEnergyConsumption]  [decimal](8, 2) NULL,   -- 可比熟料综合能耗限定值
+	[Cement_ComparableComprehensiveEnergyConsumption]  [decimal](8, 2) NULL,    -- 可比水泥综合能耗限定值
+	[RawBatch_ElectricityConsumption] [decimal](8, 2) NULL,                     -- 生料制备工段电耗
+	[Clinker_CoalConsumption] [decimal](8, 2) NULL,                             -- 熟料烧成工段煤耗
+	[Clinker_ElectricityConsumption] [decimal](8, 2) NULL,                      -- 熟料烧成工段电耗
+	[Cement_ElectricityConsumption] [decimal](8, 2) NULL                        -- 水泥制备工段电耗
 )
 GO
 
