@@ -85,7 +85,7 @@ CREATE TABLE [dbo].[table_ClinkerMonthlyOutput](            					-- 熟料生产
 ) 
 GO
 
-CREATE TABLE [dbo].[table_ClinkerYearlyOutput](            					-- 熟料生产线产量报表 年报
+CREATE TABLE [dbo].[table_ClinkerYearlyOutput](            						-- 熟料生产线产量报表 年报
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
 	[KeyID] [uniqueidentifier] NULL,                        					-- 报表引领表ID
 	[vDate] [nchar](2) NULL,
@@ -156,7 +156,7 @@ CREATE TABLE [dbo].[table_CementMillMonthlyOutput](         					-- 水泥生产
 ) 
 GO
 
-CREATE TABLE [dbo].[table_CementMillYearlyOutput](         					-- 水泥生产线产量报表 年报
+CREATE TABLE [dbo].[table_CementMillYearlyOutput](         						-- 水泥生产线产量报表 年报
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
 	[KeyID] [uniqueidentifier] NULL,                        					-- 报表引领表ID
 	[vDate] [nchar](2) NULL, 
@@ -404,7 +404,7 @@ CREATE TABLE [dbo].[table_CementMillMonthlyElectricity_peak](					-- 水泥生�
 )
 GO
 
-CREATE TABLE [dbo].[table_CementMillMonthlyElectricity_valley](				-- 水泥生产线谷段用电量统计月报表
+CREATE TABLE [dbo].[table_CementMillMonthlyElectricity_valley](					-- 水泥生产线谷段用电量统计月报表
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
 	[KeyID] [uniqueidentifier] NULL,                        					-- 报表引领表ID
 	[vDate] [nchar](2) NULL,
@@ -460,7 +460,7 @@ CREATE TABLE [dbo].[table_CementMillMonthlyElectricity_flat](					-- 水泥生�
 )
 GO
 
-CREATE TABLE [dbo].[table_CementMillYearlyElectricity_sum](					-- 水泥生产线合计用电量统计年报表
+CREATE TABLE [dbo].[table_CementMillYearlyElectricity_sum](						-- 水泥生产线合计用电量统计年报表
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
 	[KeyID] [uniqueidentifier] NULL,                        					-- 报表引领表ID
 	[vDate] [nchar](2) NULL,
