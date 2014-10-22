@@ -56,8 +56,48 @@ CREATE TABLE [dbo].[report_CementYeldPerUnitDistributionPowerConsumptionYearly](
 ) 
 GO
 
+CREATE TABLE [dbo].[report_ClinkerProductionLineEnergyConsumptionSchedule](		-- 熟料生产线能耗计划
+    [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
+    [KeyID] [uniqueidentifier] NULL,                        					-- 报表引领表ID
+	[IndicatorName] [char](30) NULL,                        					-- 指标名称
+	[January] [bigint] NULL,                                   					-- 一月指标
+	[February] [bigint] NULL,                                   				-- 二月指标
+	[March] [bigint] NULL,
+	[April] [bigint] NULL,
+	[May] [bigint] NULL,
+	[June] [bigint] NULL,
+	[July] [bigint] NULL,
+	[August] [bigint] NULL,
+	[September] [bigint] NULL,
+	[October] [bigint] NULL,
+	[November] [bigint] NULL,
+	[December] [bigint] NULL,
+	[Annual] [bigint] NULL,                                 					-- 年度指标
+    [Remarks] [nvarchar](max) NULL												-- 备注
+) 
+GO
 
-
+CREATE TABLE [dbo].[report_CementMillProductionLineProductionLineEnergyConsumptionSchedule](
+																				-- 水泥生产线能耗计划
+    [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
+    [KeyID] [uniqueidentifier] NULL,                        					-- 报表引领表ID
+	[IndicatorName] [char](30) NULL,                        					-- 指标名称
+	[January] [bigint] NULL,                                  					-- 一月指标
+	[February] [bigint] NULL,                                 					-- 二月指标
+	[March] [bigint] NULL,
+	[April] [bigint] NULL,
+	[May] [bigint] NULL,
+	[June] [bigint] NULL,
+	[July] [bigint] NULL,
+	[August] [bigint] NULL,
+	[September] [bigint] NULL,
+	[October] [bigint] NULL,
+	[November] [bigint] NULL,
+	[December] [bigint] NULL,
+	[Annual] [bigint] NULL,                                    					-- 年度指标
+	[Remarks] [nvarchar](max) NULL												-- 备注
+) 
+GO
 
 CREATE TABLE [dbo].[report_CementMonthlyElectricityConsumption](				-- 水泥(分品种)粉磨电耗月统计分析报表
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
