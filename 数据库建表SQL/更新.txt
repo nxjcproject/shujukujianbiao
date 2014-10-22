@@ -1,0 +1,45 @@
+[时间] 2014/10/13 09:39
+[文件] [建表]5.报表.sql
+[人物] 大哥
+[更新] report_ClinkerMonthlyProcessEnergyConsumption
+[更新] report_ClinkerMonthlyElectricity_sum										// 生料制备合计甲班 命名不一致，统一加上 AmountTo
+
+[时间] 2014/10/13 19:35
+[文件] [建表]5.报表.sql
+[人物] 程东元
+[添加] report_CementMilEnergyConsumption_TargetCompletion						// 水泥磨能耗指标完成情况
+
+[时间] 2014/10/14 10:10
+[文件] [建表]5.报表.sql
+[人物] 大哥
+[添加] report_CementMilMonthlyEnergyConsumption									// 水泥磨能耗月统计分析
+
+[时间] 2014/10/14 14:58
+[文件] [建表]5.报表.sql
+[人物] 程东元
+[更新] report_ClinkerYearlyProcessEnergyConsumption								// 添加列：Electricity_RawBatchMil, ElectricityConsumption_RawBatchMill
+[更新] report_ClinkerYearlyProcessEnergyConsumption								// 添加列：本月和累计
+
+[时间] 2014/10/16 19:58
+[文件] [建表]5.报表.sql
+[人物] 大哥
+[重命名] report_TeamCementMonthlyElectricityConsumption -> 
+		 report_TeamCementClassificationMonthlyElectricityConsumption
+[添加] report_TeamCementMonthlyElectricityConsumption
+[添加] report_TeamCementYearlyElectricityConsumption
+
+[时间] 2014/10/16 20:02
+[文件] [建表]5.报表.sql
+[人物] 程东元
+[添加] report_CementMilYearlyEnergyConsumption									// 水泥磨能耗年统计分析
+
+[时间] 2014/10/20 15:04
+[文件] [建表]5.报表.sql
+[人物] 大哥
+[重命名] report_EnergyConsumption_TargetCompletion -> 
+		 report_ClinkerEnergyConsumption_TargetCompletion
+[重命名] report_TeamCementMonthlyElectricityConsumption -> 
+		 report_TeamCementMonthlyEnergyConsumption
+[重命名] report_TeamCementYearlyElectricityConsumption -> 
+		 report_TeamCementYearlyEnergyConsumption
+[添加] report_TeamClinkerYearlyProcessEnergyConsumption								// 班组熟料生产能耗年统计分析
