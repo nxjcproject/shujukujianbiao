@@ -134,12 +134,17 @@ CREATE TABLE [dbo].[report_CementYearlyElectricityConsumption](					--Ë®Äà(·ÖÆ·Ö
 	[vDate] [nchar](2) NULL,                                    				--ÔÂ·İ
 	[CementTypes] [char](30) NULL,                          					--Ë®ÄàÆ·ÖÖ
 	[ConvertCoefficient]  [decimal](6, 4) NULL,                      			--ÕÛºÏÏµÊı
-    [Output] [bigint] NULL,                             						--²úÁ¿
-	[Electricity] [bigint] NULL,                        						--µçÁ¿
-    [ElectricityConsumption]  [decimal](8, 2) NULL,             				--µçºÄ
-	[Convert_ElectricityConsumption]  [decimal](8, 2) NULL,    					--ÕÛËãµçºÄ
+    [Output_Monthly] [bigint] NULL,                             				--²úÁ¿_±¾ÔÂ
+	[Output_Accumulative] [bigint] NULL,                             			--²úÁ¿_ÀÛ¼Æ
+	[Electricity_Monthly] [bigint] NULL,                        				--µçÁ¿_±¾ÔÂ
+	[Electricity_Accumulative] [bigint] NULL,                        			--µçÁ¿_ÀÛ¼Æ
+    [ElectricityConsumption_Monthly]  [decimal](8, 2) NULL,             		--µçºÄ_±¾ÔÂ
+	[ElectricityConsumption_Accumulative]  [decimal](8, 2) NULL,             	--µçºÄ_ÀÛ¼Æ
+	[Convert_ElectricityConsumption_Monthly]  [decimal](8, 2) NULL,    			--ÕÛËãµçºÄ_±¾ÔÂ
+	[Convert_ElectricityConsumption_Accumulative]  [decimal](8, 2) NULL,    	--ÕÛËãµçºÄ_ÀÛ¼Æ
+)
 ) 
-GO
+GO 
 
 CREATE TABLE [dbo].[report_TeamCementClassificationMonthlyElectricityConsumption](--°à×éË®Äà(·ÖÆ·ÖÖ)·ÛÄ¥µçºÄÔÂÍ³¼Æ·ÖÎö±¨±í
 	[vDate] [nchar](2) NULL,                                     				--ÈÕÆÚ
@@ -489,7 +494,7 @@ CREATE TABLE [dbo].[report_ClinkerMonthlyProcessEnergyConsumption](				--ÊìÁÏÉú²
 	[First_Output_Clinker]  [bigint] NULL,                     					-- ¼×°à-²úÁ¿-ÊìÁÏÉÕ³É
 	[First_Output_CoalDust]  [bigint] NULL,                    					-- ¼×°à-²úÁ¿-Ãº·ÛÖÆ±¸
 	[First_Output_Cogeneration]  [bigint] NULL,                					-- ¼×°à-²úÁ¿-ÓàÈÈ·¢µç·¢µçÁ¿
-	[First_ElectricityConsumption_RawBatch]  [bigint] NULL,    					-- ¼×°à-µçºÄ-ÉúÁÏÖÆ±¸
+	[First_ElectricityConsumption_RawBatch]  [decimal](8, 2) NULL,    			-- ¼×°à-µçºÄ-ÉúÁÏÖÆ±¸
 	[First_ElectricityConsumption_RawBatchGrinding] [decimal](8, 2) NULL, 		-- µçºÄ-ÉúÁÏÄ¥ 
 	[First_ElectricityConsumption_Clinker]  [decimal](8, 2) NULL,     			-- ¼×°à-µçºÄ-ÊìÁÏÉÕ³É
 	[First_ElectricityConsumption_CoalDust]  [decimal](8, 2) NULL,    			-- ¼×°à-µçºÄ-Ãº·ÛÖÆ±¸

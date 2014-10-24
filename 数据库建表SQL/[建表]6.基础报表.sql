@@ -368,7 +368,7 @@ CREATE TABLE [dbo].[table_CementMillMonthlyElectricity_sum](					-- 水泥生产
 	[AmounttoCementPackagingFirstShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoCementPackagingSecondShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoCementPackagingThirdShift]  [decimal](18, 4) default(0) NULL,
-	[Amountto CementPackagingSum]  [decimal](18, 4) default(0) NULL,            -- 水泥包装与输送电量
+	[AmounttoCementPackagingSum]  [decimal](18, 4) default(0) NULL,            -- 水泥包装与输送电量
 	[AmounttoFirstShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoSecondShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoThirdShift]  [decimal](18, 4) default(0) NULL,
@@ -396,7 +396,7 @@ CREATE TABLE [dbo].[table_CementMillMonthlyElectricity_peak](					-- 水泥生�
 	[AmounttoCementPackagingFirstShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoCementPackagingSecondShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoCementPackagingThirdShift]  [decimal](18, 4) default(0) NULL,
-	[Amountto CementPackagingSum]  [decimal](18, 4) default(0) NULL,            -- 水泥包装与输送电量
+	[AmounttoCementPackagingSum]  [decimal](18, 4) default(0) NULL,            -- 水泥包装与输送电量
 	[AmounttoFirstShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoSecondShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoThirdShift]  [decimal](18, 4) default(0) NULL,
@@ -424,7 +424,7 @@ CREATE TABLE [dbo].[table_CementMillMonthlyElectricity_valley](					-- 水泥生
 	[AmounttoCementPackagingFirstShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoCementPackagingSecondShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoCementPackagingThirdShift]  [decimal](18, 4) default(0) NULL,
-	[Amountto CementPackagingSum]  [decimal](18, 4) default(0) NULL,            -- 水泥包装与输送电量
+	[AmounttoCementPackagingSum]  [decimal](18, 4) default(0) NULL,            -- 水泥包装与输送电量
 	[AmounttoFirstShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoSecondShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoThirdShift]  [decimal](18, 4) default(0) NULL,
@@ -452,7 +452,7 @@ CREATE TABLE [dbo].[table_CementMillMonthlyElectricity_flat](					-- 水泥生�
 	[AmounttoCementPackagingFirstShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoCementPackagingSecondShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoCementPackagingThirdShift]  [decimal](18, 4) default(0) NULL,
-	[Amountto CementPackagingSum]  [decimal](18, 4) default(0) NULL,            -- 水泥包装与输送电量
+	[AmounttoCementPackagingSum]  [decimal](18, 4) default(0) NULL,            -- 水泥包装与输送电量
 	[AmounttoFirstShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoSecondShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoThirdShift]  [decimal](18, 4) default(0) NULL,
@@ -480,7 +480,7 @@ CREATE TABLE [dbo].[table_CementMillYearlyElectricity_sum](						-- 水泥生产
 	[AmounttoCementPackagingFirstShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoCementPackagingSecondShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoCementPackagingThirdShift]  [decimal](18, 4) default(0) NULL,
-	[Amountto CementPackagingSum]  [decimal](18, 4) default(0) NULL,            -- 水泥包装与输送电量
+	[AmounttoCementPackagingSum]  [decimal](18, 4) default(0) NULL,            -- 水泥包装与输送电量
 	[AmounttoFirstShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoSecondShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoThirdShift]  [decimal](18, 4) default(0) NULL,
