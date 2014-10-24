@@ -384,28 +384,28 @@ CREATE TABLE [dbo].[report_ClinkerMonthlyCoalDustConsumption](					-- Î¡œ…˙≤˙”√√
 	[KeyID] [uniqueidentifier] NULL,                        					-- ±®±Ì“˝¡Ï±ÌID
 	[vDate] [nchar](2) NULL,                                     				--»’∆⁄
 	--º◊∞‡
-	[First_Clinker_Output] [decimal](18, 4) NULL,                     			-- Ï¡œ≤˙¡ø
-    [First_KilnHead_CoalDust] [decimal](18, 4) NULL,                  			--“§Õ∑”√√∫¡ø
-	[First_KilnTail_CoalDust] [decimal](18, 4) NULL,                  			--“§Œ≤”√√∫¡ø
-	[First_sum_CoalDust] [decimal](18, 4) NULL,                       			--∫œº∆”√√∫¡ø
+	[First_Clinker_Output] [bigint] NULL,                     					-- Ï¡œ≤˙¡ø
+    [First_KilnHead_CoalDust] [bigint] NULL,                  					--“§Õ∑”√√∫¡ø
+	[First_KilnTail_CoalDust] [bigint] NULL,                  					--“§Œ≤”√√∫¡ø
+	[First_sum_CoalDust] [bigint] NULL,                       					--∫œº∆”√√∫¡ø
 	[First_CoalDustConsumption] [decimal](8, 2) NULL,                			--√∫∫ƒ
 	--““∞‡
-	[Second_Clinker_Output] [decimal](18, 4) NULL,                     			-- Ï¡œ≤˙¡ø
-    [Second_KilnHead_CoalDust] [decimal](18, 4) NULL,                  			--“§Õ∑”√√∫¡ø
-	[Second_KilnTail_CoalDust] [decimal](18, 4) NULL,                  			--“§Œ≤”√√∫¡ø
-	[Second_sum_CoalDust] [decimal](18, 4) NULL,                       			--∫œº∆”√√∫¡ø
+	[Second_Clinker_Output] [bigint] NULL,                     					-- Ï¡œ≤˙¡ø
+    [Second_KilnHead_CoalDust] [bigint] NULL,                  					--“§Õ∑”√√∫¡ø
+	[Second_KilnTail_CoalDust] [bigint] NULL,                  					--“§Œ≤”√√∫¡ø
+	[Second_sum_CoalDust] [bigint] NULL,                       					--∫œº∆”√√∫¡ø
 	[Second_CoalDustConsumption] [decimal](8, 2) NULL,                			--√∫∫ƒ
 	--±˚∞‡
-	[Third_Clinker_Output] [decimal](18, 4) NULL,                     			-- Ï¡œ≤˙¡ø
-    [Third_KilnHead_CoalDust] [decimal](18, 4) NULL,                  			--“§Õ∑”√√∫¡ø
-	[Third_KilnTail_CoalDust] [decimal](18, 4) NULL,                  			--“§Œ≤”√√∫¡ø
-	[Third_sum_CoalDust] [decimal](18, 4) NULL,                       			--∫œº∆”√√∫¡ø
+	[Third_Clinker_Output] [bigint] NULL,                     					-- Ï¡œ≤˙¡ø
+    [Third_KilnHead_CoalDust] [bigint] NULL,                  					--“§Õ∑”√√∫¡ø
+	[Third_KilnTail_CoalDust] [bigint] NULL,                  					--“§Œ≤”√√∫¡ø
+	[Third_sum_CoalDust] [bigint] NULL,                       					--∫œº∆”√√∫¡ø
 	[Third_CoalDustConsumption] [decimal](8, 2) NULL,                			--√∫∫ƒ
 	--∫œº∆
-	[Amountto_Clinker_Output] [decimal](18, 4) NULL,                     		-- Ï¡œ≤˙¡ø
-    [Amountto_KilnHead_CoalDust] [decimal](18, 4) NULL,                  		--“§Õ∑”√√∫¡ø
-	[Amountto_KilnTail_CoalDust] [decimal](18, 4) NULL,                  		--“§Œ≤”√√∫¡ø
-	[Amountto_sum_CoalDust] [decimal](18, 4) NULL,                       		--∫œº∆”√√∫¡ø
+	[Amountto_Clinker_Output] [bigint] NULL,                     				-- Ï¡œ≤˙¡ø
+    [Amountto_KilnHead_CoalDust] [bigint] NULL,                  				--“§Õ∑”√√∫¡ø
+	[Amountto_KilnTail_CoalDust] [bigint] NULL,                  				--“§Œ≤”√√∫¡ø
+	[Amountto_sum_CoalDust] [bigint] NULL,                       				--∫œº∆”√√∫¡ø
 	[Amountto_CoalDustConsumption] [decimal](8, 2) NULL,                		--√∫∫ƒ
 )
 GO
