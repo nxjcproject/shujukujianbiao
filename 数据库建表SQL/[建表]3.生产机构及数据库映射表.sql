@@ -8,6 +8,7 @@ CREATE TABLE [dbo].[system_Organization](										-- 组织机构结构表
 	[DatabaseID] [uniqueidentifier] NULL,										-- 数据库ID
 	[Name] [nvarchar](50) NULL,													-- 生产机构名称
 	[Type] [nvarchar](50) NULL,													-- 生产线类型
+	[ENABLED] [bit] NULL,														-- 是否有效
 	[LegalRepresentative] [nvarchar](30) NULL,									-- 法人代表
 	[Address] [nvarchar](max) NULL,												-- 生产机构地址
 	[Contacts] [nchar](10) NULL,												-- 联系人
