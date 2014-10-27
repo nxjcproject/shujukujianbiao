@@ -796,7 +796,7 @@ GO
 CREATE TABLE [dbo].[report_TeamClinkerMonthlyProcessEnergyConsumption](			--班组熟料生产工序能耗月统计报表
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
 	[KeyID] [uniqueidentifier] NULL,                        					-- 报表引领表ID
-	[vDate] [int] NULL,                                     					-- 日期
+	[vDate] [nchar](2) NULL,                                     					-- 日期
      --A组
 	[TeamA_Electricity_RawBatch]  [bigint] NULL,               					-- 电量-生料制备
 	[TeamA_Electricity_RawBatchGrinding] [bigint] NULL,							-- 电量-生料磨
@@ -880,7 +880,7 @@ CREATE TABLE [dbo].[report_TeamClinkerMonthlyProcessEnergyConsumption](			--班组
 ) 
 GO
 
-CREATE TABLE [dbo].[report_TeamClinkerYearlyProcessEnergyConsumption](			-- 班组熟料生产能耗年统计分析
+CREATE TABLE [dbo].[report_TeamClinkerYearlyProcessEnergyConsumption](			-- 班组熟料生产工序能耗年统计分析
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
 	[KeyID] [uniqueidentifier] NULL,                        					-- 报表引领表ID
 	[vDate] [nchar](2) NULL,                                     				-- 日期
@@ -959,7 +959,7 @@ CREATE TABLE [dbo].[report_TeamClinkerYearlyProcessEnergyConsumption](			-- 班组
 	[Amountto_Output_CoalDust]  [bigint] NULL,                    				-- 日合计-产量-煤粉制备
 	[Amountto_Output_Cogeneration]  [bigint] NULL,                				-- 日合计-产量-余热发电发电量
 	[Amountto_ElectricityConsumption_RawBatch]  [decimal](8, 2) NULL,    		-- 日合计-电耗-生料制备
-	[Amountto_ElectricityConsumption_RawBatchGrinding] [decimal](8, 2) NULL, 	-- 电耗-生料磨 
+	[Amountto_ElectricityConsumption_RawBatchGrinding] [decimal](8, 2) NULL, 	-- 日合计-电耗-生料磨 
 	[Amountto_ElectricityConsumption_Clinker]  [decimal](8, 2) NULL,     		-- 日合计-电耗-熟料烧成
 	[Amountto_ElectricityConsumption_CoalDust]  [decimal](8, 2) NULL,    		-- 日合计-电耗-煤粉制备
 	[Amountto_ComprehensiveElectricityConsumption]  [decimal](8, 2) NULL,		-- 日合计-综合电耗
