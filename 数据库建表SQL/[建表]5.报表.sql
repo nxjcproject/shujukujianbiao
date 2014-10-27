@@ -793,6 +793,93 @@ CREATE TABLE [dbo].[report_CementMilYearlyEnergyConsumption](					-- Ë®ÄàÄ¥ÄÜºÄÄ
 )
 GO
 
+CREATE TABLE [dbo].[report_TeamClinkerMonthlyProcessEnergyConsumption](			--°à×éÊìÁÏÉú²ú¹¤ĞòÄÜºÄÔÂÍ³¼Æ±¨±í
+    [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- Ö÷¼üID
+	[KeyID] [uniqueidentifier] NULL,                        					-- ±¨±íÒıÁì±íID
+	[vDate] [int] NULL,                                     					-- ÈÕÆÚ
+     --A×é
+	[TeamA_Electricity_RawBatch]  [bigint] NULL,               					-- µçÁ¿-ÉúÁÏÖÆ±¸
+	[TeamA_Electricity_RawBatchGrinding] [bigint] NULL,							-- µçÁ¿-ÉúÁÏÄ¥
+	[TeamA_Electricity_Clinker]  [bigint] NULL,                					-- µçÁ¿-ÊìÁÏÉÕ³É
+	[TeamA_Electricity_CoalDust]  [bigint] NULL,               					-- µçÁ¿-Ãº·ÛÖÆ±¸
+	[TeamA_Consumption_CoalDust]  [bigint] NULL,               					-- ÏûºÄÁ¿-Ãº·Û
+	[TeamA_Output_RawBatch]  [bigint] NULL,                    					-- ²úÁ¿-ÉúÁÏÖÆ±¸
+	[TeamA_Output_Clinker]  [bigint] NULL,                     					-- ²úÁ¿-ÊìÁÏÉÕ³É
+	[TeamA_Output_CoalDust]  [bigint] NULL,                    					-- ²úÁ¿-Ãº·ÛÖÆ±¸
+	[TeamA_Output_Cogeneration]  [bigint] NULL,                					-- ²úÁ¿-ÓàÈÈ·¢µç·¢µçÁ¿
+	[TeamA_ElectricityConsumption_RawBatch]  [decimal](18, 4) NULL,    			-- µçºÄ-ÉúÁÏÖÆ±¸
+	[TeamA_ElectricityConsumption_RawBatchGrinding] [decimal](18, 4) NULL, 		-- µçºÄ-ÉúÁÏÄ¥ 
+	[TeamA_ElectricityConsumption_Clinker]  [decimal](18, 4) NULL,     			-- µçºÄ-ÊìÁÏÉÕ³É
+	[TeamA_ElectricityConsumption_CoalDust]  [decimal](18, 4) NULL,    			-- µçºÄ-Ãº·ÛÖÆ±¸
+	[TeamA_ComprehensiveElectricityConsumption]  [decimal](18, 4) NULL,			-- ×ÛºÏµçºÄ
+	[TeamA_ComprehensiveCoalConsumption]  [decimal](18, 4) NULL,       			-- ÊµÎïÃººÄ
+     --B×é
+	[TeamB_Electricity_RawBatch]  [bigint] NULL,              					-- µçÁ¿-ÉúÁÏÖÆ±¸
+	[TeamB_Electricity_RawBatchGrinding] [bigint] NULL,							-- µçÁ¿-ÉúÁÏÄ¥
+	[TeamB_Electricity_Clinker]  [bigint] NULL,               					-- µçÁ¿-ÊìÁÏÉÕ³É
+	[TeamB_Electricity_CoalDust]  [bigint] NULL,              					-- µçÁ¿-Ãº·ÛÖÆ±¸
+	[TeamB_Consumption_CoalDust]  [bigint] NULL,              					-- ÏûºÄÁ¿-Ãº·Û
+	[TeamB_Output_RawBatch]  [bigint] NULL,                   					-- ²úÁ¿-ÉúÁÏÖÆ±¸
+	[TeamB_Output_Clinker]  [bigint] NULL,                    					-- ²úÁ¿-ÊìÁÏÉÕ³É
+	[TeamB_Output_CoalDust]  [bigint] NULL,                   					-- ²úÁ¿-Ãº·ÛÖÆ±¸
+	[TeamB_Output_Cogeneration]  [bigint] NULL,               					-- ²úÁ¿-ÓàÈÈ·¢µç·¢µçÁ¿
+	[TeamB_ElectricityConsumption_RawBatch]  [decimal](18, 4) NULL,   			-- µçºÄ-ÉúÁÏÖÆ±¸
+	[TeamB_ElectricityConsumption_RawBatchGrinding] [decimal](18, 4) NULL, 		-- µçºÄ-ÉúÁÏÄ¥ 
+	[TeamB_ElectricityConsumption_Clinker]  [decimal](18, 4) NULL,    			-- µçºÄ-ÊìÁÏÉÕ³É
+	[TeamB_ElectricityConsumption_CoalDust]  [decimal](18, 4) NULL,   			-- µçºÄ-Ãº·ÛÖÆ±¸
+	[TeamB_ComprehensiveElectricityConsumption]  [decimal](18, 4) NULL,			-- ×ÛºÏµçºÄ
+	[TeamB_ComprehensiveCoalConsumption]  [decimal](18, 4) NULL,      			-- ÊµÎïÃººÄ
+     --C×é
+	[TeamC_Electricity_RawBatch]  [bigint] NULL,               					-- µçÁ¿-ÉúÁÏÖÆ±¸
+	[TeamC_Electricity_RawBatchGrinding] [bigint] NULL,							-- µçÁ¿-ÉúÁÏÄ¥
+	[TeamC_Electricity_Clinker]  [bigint] NULL,                					-- µçÁ¿-ÊìÁÏÉÕ³É
+	[TeamC_Electricity_CoalDust]  [bigint] NULL,               					-- µçÁ¿-Ãº·ÛÖÆ±¸
+	[TeamC_Consumption_CoalDust]  [bigint] NULL,               					-- ÏûºÄÁ¿-Ãº·Û
+	[TeamC_Output_RawBatch]  [bigint] NULL,                    					-- ²úÁ¿-ÉúÁÏÖÆ±¸
+	[TeamC_Output_Clinker]  [bigint] NULL,                    	 				-- ²úÁ¿-ÊìÁÏÉÕ³É
+	[TeamC_Output_CoalDust]  [bigint] NULL,                    					-- ²úÁ¿-Ãº·ÛÖÆ±¸
+	[TeamC_Output_Cogeneration]  [bigint] NULL,                					-- ²úÁ¿-ÓàÈÈ·¢µç·¢µçÁ¿
+	[TeamC_ElectricityConsumption_RawBatch]  [decimal](18, 4) NULL,    			-- µçºÄ-ÉúÁÏÖÆ±¸
+	[TeamC_ElectricityConsumption_RawBatchGrinding] [decimal](18, 4) NULL, 		-- µçºÄ-ÉúÁÏÄ¥ 
+	[TeamC_ElectricityConsumption_Clinker]  [decimal](18, 4) NULL,     			-- µçºÄ-ÊìÁÏÉÕ³É
+	[TeamC_ElectricityConsumption_CoalDust]  [decimal](18, 4) NULL,    			-- µçºÄ-Ãº·ÛÖÆ±¸
+	[TeamC_ComprehensiveElectricityConsumption]  [decimal](18, 4) NULL,			-- ×ÛºÏµçºÄ
+	[TeamC_ComprehensiveCoalConsumption]  [decimal](18, 4) NULL,       			-- ÊµÎïÃººÄ
+	--D×é
+	[TeamD_Electricity_RawBatch]  [bigint] NULL,               					-- µçÁ¿-ÉúÁÏÖÆ±¸
+	[TeamD_Electricity_RawBatchGrinding] [bigint] NULL,							-- µçÁ¿-ÉúÁÏÄ¥
+	[TeamD_Electricity_Clinker]  [bigint] NULL,                					-- µçÁ¿-ÊìÁÏÉÕ³É
+	[TeamD_Electricity_CoalDust]  [bigint] NULL,               					-- µçÁ¿-Ãº·ÛÖÆ±¸
+	[TeamD_Consumption_CoalDust]  [bigint] NULL,               					-- ÏûºÄÁ¿-Ãº·Û
+	[TeamD_Output_RawBatch]  [bigint] NULL,                    					-- ²úÁ¿-ÉúÁÏÖÆ±¸
+	[TeamD_Output_Clinker]  [bigint] NULL,                     					-- ²úÁ¿-ÊìÁÏÉÕ³É
+	[TeamD_Output_CoalDust]  [bigint] NULL,                    					-- ²úÁ¿-Ãº·ÛÖÆ±¸
+	[TeamD_Output_Cogeneration]  [bigint] NULL,                					-- ²úÁ¿-ÓàÈÈ·¢µç·¢µçÁ¿
+	[TeamD_ElectricityConsumption_RawBatch]  [decimal](18, 4) NULL,    			-- µçºÄ-ÉúÁÏÖÆ±¸
+	[TeamD_ElectricityConsumption_RawBatchGrinding] [decimal](18, 4) NULL, 		-- µçºÄ-ÉúÁÏÄ¥ 
+	[TeamD_ElectricityConsumption_Clinker]  [decimal](18, 4) NULL,     			-- µçºÄ-ÊìÁÏÉÕ³É
+	[TeamD_ElectricityConsumption_CoalDust]  [decimal](18, 4) NULL,    			-- µçºÄ-Ãº·ÛÖÆ±¸
+	[TeamD_ComprehensiveElectricityConsumption]  [decimal](18, 4) NULL,			-- ×ÛºÏµçºÄ
+	[TeamD_ComprehensiveCoalConsumption]  [decimal](18, 4) NULL,       			-- ÊµÎïÃººÄ
+     --ÈÕºÏ¼Æ
+	[Amountto_Electricity_RawBatch]  [bigint] NULL,               				-- ÈÕºÏ¼Æ-µçÁ¿-ÉúÁÏÖÆ±¸
+	[Amountto_Electricity_RawBatchGrinding] [bigint] NULL,						-- ÈÕºÏ¼Æ-µçÁ¿-ÉúÁÏÖÆ±¸
+	[Amountto_Electricity_Clinker]  [bigint] NULL,                				-- ÈÕºÏ¼Æ-µçÁ¿-ÊìÁÏÉÕ³É
+	[Amountto_Electricity_CoalDust]  [bigint] NULL,               				-- ÈÕºÏ¼Æ-µçÁ¿-Ãº·ÛÖÆ±¸
+	[Amountto_Consumption_CoalDust]  [bigint] NULL,               				-- ÈÕºÏ¼Æ-ÏûºÄÁ¿-Ãº·Û
+	[Amountto_Output_RawBatch]  [bigint] NULL,                    				-- ÈÕºÏ¼Æ-²úÁ¿-ÉúÁÏÖÆ±¸
+	[Amountto_Output_Clinker]  [bigint] NULL,                     				-- ÈÕºÏ¼Æ-²úÁ¿-ÊìÁÏÉÕ³É
+	[Amountto_Output_CoalDust]  [bigint] NULL,                    				-- ÈÕºÏ¼Æ-²úÁ¿-Ãº·ÛÖÆ±¸
+	[Amountto_Output_Cogeneration]  [bigint] NULL,                				-- ÈÕºÏ¼Æ-²úÁ¿-ÓàÈÈ·¢µç·¢µçÁ¿
+	[Amountto_ElectricityConsumption_RawBatch]  [decimal](18, 4) NULL,    		-- ÈÕºÏ¼Æ-µçºÄ-ÉúÁÏÖÆ±¸
+	[Amountto_ElectricityConsumption_RawBatchGrinding] [decimal](18, 4) NULL, 	-- µçºÄ-ÉúÁÏÄ¥ 
+	[Amountto_ElectricityConsumption_Clinker]  [decimal](18, 4) NULL,     		-- ÈÕºÏ¼Æ-µçºÄ-ÊìÁÏÉÕ³É
+	[Amountto_ElectricityConsumption_CoalDust]  [decimal](18, 4) NULL,    		-- ÈÕºÏ¼Æ-µçºÄ-Ãº·ÛÖÆ±¸
+	[Amountto_ComprehensiveElectricityConsumption]  [decimal](18, 4) NULL,		-- ÈÕºÏ¼Æ-×ÛºÏµçºÄ
+	[Amountto_ComprehensiveCoalConsumption]  [decimal](18, 4) NULL,       		-- ÈÕºÏ¼Æ-ÊµÎïÃººÄ
+) 
+GO
+
 CREATE TABLE [dbo].[report_TeamClinkerYearlyProcessEnergyConsumption](			-- °à×éÊìÁÏÉú²úÄÜºÄÄêÍ³¼Æ·ÖÎö
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- Ö÷¼üID
 	[KeyID] [uniqueidentifier] NULL,                        					-- ±¨±íÒıÁì±íID
