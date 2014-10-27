@@ -143,7 +143,6 @@ CREATE TABLE [dbo].[report_CementYearlyElectricityConsumption](					--Ë®Äà(·ÖÆ·Ö
 	[Convert_ElectricityConsumption_Monthly]  [decimal](8, 2) NULL,    			--ÕÛËãµçºÄ_±¾ÔÂ
 	[Convert_ElectricityConsumption_Accumulative]  [decimal](8, 2) NULL,    	--ÕÛËãµçºÄ_ÀÛ¼Æ
 )
-) 
 GO 
 
 CREATE TABLE [dbo].[report_TeamCementClassificationMonthlyElectricityConsumption](--°à×éË®Äà(·ÖÆ·ÖÖ)·ÛÄ¥µçºÄÔÂÍ³¼Æ·ÖÎö±¨±í
