@@ -8,7 +8,7 @@ CREATE TABLE [dbo].[AmmeterContrast](											-- 电表对照表
 	[AmmeterNumber] [char](30) NULL,											-- 电表层次码
 	[AmmeterName] [char](30) NULL,												-- 电表名称
 	[AmmeterSource] [bit] NULL,													-- 电表来源（0表示来自串口，1表示来自电力需求侧）
-	[ElectricRoom] [varchar](max) NULL,											-- 所属电气室
+	[ElectricRoom] [char](40) NULL,												-- 所属电气室
 	[CommunicationProtocol ] [char](30) NULL,									-- 通讯协议
 	[AmmeterAddress] [char](30) NULL,											-- 电表地址
 	[CommPort] [int] NULL,														-- 通讯串口号

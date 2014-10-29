@@ -6,9 +6,11 @@ CREATE TABLE [dbo].[table_AmmeterPeakerValleyFlatDay](							-- 电表峰谷平�
     [KeyID] [uniqueidentifier] NULL,	           	 							-- 报表引领表ID
     [AmmeterNumber] [char](30) default(0) NULL,									-- 电表层次码
 	[AmmeterName] [char](30) default(0) NULL,	            					-- 电表名称	
+	[ElectricRoom] [char](40) NULL,												-- 所属电气室
 	[Peak_Electricity] [decimal](18, 4) default(0) NULL,    					-- 峰期电量
 	[Valley_Electricity] [decimal](18, 4) default(0) NULL,  					-- 谷期电量
 	[Flat_Electricity] [decimal](18, 4) default(0) NULL     					-- 平期电量
+	[Sum_Electricity] [decimal](18, 4) default(0) NULL     						-- 合计电量
 )
 GO
 
@@ -17,9 +19,11 @@ CREATE TABLE [dbo].[table_AmmeterPeakerValleyFlatMonth](						-- 电表峰谷平
     [KeyID] [uniqueidentifier] NULL,		                					-- 报表引领表ID
     [AmmeterNumber] [char](30) NULL,				        					-- 电表层次码
 	[AmmeterName] [char](30) NULL,						    					-- 电表名称	
+	[ElectricRoom] [char](40) NULL,												-- 所属电气室
 	[Peak_Electricity] [decimal](18, 4) default(0) NULL,    					-- 峰期电量
 	[Valley_Electricity] [decimal](18, 4) default(0) NULL,  					-- 谷期电量
 	[Flat_Electricity] [decimal](18, 4) default(0) NULL     					-- 平期电量
+	[Sum_Electricity] [decimal](18, 4) default(0) NULL     						-- 合计电量
 )
 GO
 
@@ -27,12 +31,54 @@ CREATE TABLE [dbo].[table_AmmeterPeakerValleyFlatYear](							-- 电表峰谷平
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
     [KeyID] [uniqueidentifier] NULL,		                					-- 报表引领表ID
     [AmmeterNumber] [char](30) NULL,				        					-- 电表层次码
-	[AmmeterName] [char](30) NULL,						    					-- 电表名称	
-	[Peak_Electricity] [bigint] default(0) NULL,            					-- 峰期电量
-	[Valley_Electricity] [bigint] default(0) NULL,          					-- 谷期电量
-	[Flat_Electricity] [bigint] default(0) NULL,            					-- 平期电量
+	[AmmeterName] [char](30) NULL,						    					-- 电表名称
+	[ElectricRoom] [char](40) NULL,												-- 所属电气室	
+	[Peak_Electricity] [decimal](18, 4) default(0) NULL,    					-- 峰期电量
+	[Valley_Electricity] [decimal](18, 4) default(0) NULL,  					-- 谷期电量
+	[Flat_Electricity] [decimal](18, 4) default(0) NULL     					-- 平期电量
+	[Sum_Electricity] [decimal](18, 4) default(0) NULL     						-- 合计电量
 )
 GO
+
+CREATE TABLE [dbo].[table_ProcessPeakValleyFlatElectricityDay](					--工序峰谷平用电统计日报表
+[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      						--主键ID
+[KeyID] [uniqueidentifier] NULL,                        						--生产机构ID
+[vDate] [nchar](2) NULL,														
+[LevelCode] [char](20) NULL,                            						--层次码
+[ProcessName] [varchar](max) NULL,                             					--工序名称
+[Peak] [decimal](18, 4) NULL,													--峰期
+[Valley] [decimal](18, 4) NULL,													--谷期
+[Flat] [decimal](18, 4) NULL,													--平期
+[Amountto] [decimal](18, 4) NULL								    			--合计
+)
+GO
+
+CREATE TABLE [dbo].[table_ProcessPeakValleyFlatElectricityMonth](				--工序峰谷平用电统计月报表
+[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      						--主键ID
+[KeyID] [uniqueidentifier] NULL,                        						--生产机构ID
+[vDate] [nchar](2) NULL,														
+[LevelCode] [char](20) NULL,                            						--层次码
+[ProcessName] [varchar](max) NULL,                             					--工序名称
+[Peak] [decimal](18, 4) NULL,													--峰期
+[Valley] [decimal](18, 4) NULL,													--谷期
+[Flat] [decimal](18, 4) NULL,													--平期
+[Amountto] [decimal](18, 4) NULL								    			--合计
+)
+GO
+
+CREATE TABLE [dbo].[table_ProcessPeakValleyFlatElectricityYear](				--工序峰谷平用电统计年报表
+[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      						--主键ID
+[KeyID] [uniqueidentifier] NULL,                        						--生产机构ID
+[vDate] [nchar](2) NULL,														
+[LevelCode] [char](20) NULL,                            						--层次码
+[ProcessName] [varchar](max) NULL,                             					--工序名称
+[Peak] [decimal](18, 4) NULL,													--峰期
+[Valley] [decimal](18, 4) NULL,													--谷期
+[Flat] [decimal](18, 4) NULL,													--平期
+[Amountto] [decimal](18, 4) NULL								    			--合计
+)
+GO
+
 CREATE TABLE [dbo].[table_ClinkerMonthlyOutput](            					-- 熟料生产线产量报表 月报
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,     	 					-- 主键ID
 	[KeyID] [uniqueidentifier] NULL,                        					-- 报表引领表ID
@@ -326,7 +372,7 @@ CREATE TABLE [dbo].[table_ClinkerYearlyElectricity_sum](						-- 熟料生产线
 	[RawBatchGrindingSecondShift]  [decimal](18, 4) default(0) NULL,
 	[RawBatchGrindingThirdShift]  [decimal](18, 4) default(0) NULL,
 	[RawBatchGrindingSum]  [decimal](18, 4) default(0) NULL,
-	[RawBatchPreparationFirstShift]  [decimal](18, 4) default(0) NULL,          -- 生料制备合计甲班
+	[AmounttoRawBatchPreparationFirstShift]  [decimal](18, 4) default(0) NULL,  -- 生料制备合计甲班
 	[AmounttoRawBatchPreparationSecondShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoRawBatchPreparationThirdShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoRawBatchPreparationSum]  [decimal](18, 4) default(0) NULL,
