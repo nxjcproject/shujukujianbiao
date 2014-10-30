@@ -124,9 +124,9 @@ CREATE TABLE [dbo].[table_PublicFormulaGroupDay](								--公共公式分组峰
 [vDate] [nchar](2) NULL,														
 [LevelCode] [char](20) NULL,                            						--层次码
 [ProcessName] [varchar](max) NULL,                             					--工序名称
-[FirstGroup] [decimal](18, 4) NULL,												--峰期
-[SecondGroup] [decimal](18, 4) NULL,											--谷期
-[ThirdGroup] [decimal](18, 4) NULL,												--平期
+[FirstGroup] [decimal](18, 4) NULL,												--甲班
+[SecondGroup] [decimal](18, 4) NULL,											--乙班
+[ThirdGroup] [decimal](18, 4) NULL,												--丙班
 [Amountto] [decimal](18, 4) NULL								    			--合计
 )
 GO
