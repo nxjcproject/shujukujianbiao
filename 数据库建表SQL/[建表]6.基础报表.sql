@@ -41,93 +41,106 @@ CREATE TABLE [dbo].[table_AmmeterPeakerValleyFlatYear](							-- 电表峰谷平
 GO
 
 CREATE TABLE [dbo].[table_FormulaDay](											--公式峰谷平用电统计日报表
-[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      						--主键ID
-[KeyID] [uniqueidentifier] NULL,                        						--生产机构ID
-[vDate] [nchar](2) NULL,														
-[LevelCode] [char](20) NULL,                            						--层次码
-[ProcessName] [varchar](max) NULL,                             					--工序名称
-[Peak] [decimal](18, 4) NULL,													--峰期
-[Valley] [decimal](18, 4) NULL,													--谷期
-[Flat] [decimal](18, 4) NULL,													--平期
-[Amountto] [decimal](18, 4) NULL								    			--合计
+	[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					--主键ID
+	[KeyID] [uniqueidentifier] NULL,                        					--生产机构ID
+	[vDate] [nchar](2) NULL,														
+	[LevelCode] [char](20) NULL,                            					--层次码
+	[ProcessName] [varchar](max) NULL,                             				--工序名称
+	[Peak] [decimal](18, 4) NULL,												--峰期
+	[Valley] [decimal](18, 4) NULL,												--谷期
+	[Flat] [decimal](18, 4) NULL,												--平期
+	[Amountto] [decimal](18, 4) NULL								    		--合计
 )
 GO
 
 CREATE TABLE [dbo].[table_FormulaMonth](										--公式峰谷平用电统计月报表
-[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      						--主键ID
-[KeyID] [uniqueidentifier] NULL,                        						--生产机构ID
-[vDate] [nchar](2) NULL,														
-[LevelCode] [char](20) NULL,                            						--层次码
-[ProcessName] [varchar](max) NULL,                             					--工序名称
-[Peak] [decimal](18, 4) NULL,													--峰期
-[Valley] [decimal](18, 4) NULL,													--谷期
-[Flat] [decimal](18, 4) NULL,													--平期
-[Amountto] [decimal](18, 4) NULL								    			--合计
+	[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					--主键ID
+	[KeyID] [uniqueidentifier] NULL,                        					--生产机构ID
+	[vDate] [nchar](2) NULL,														
+	[LevelCode] [char](20) NULL,                            					--层次码
+	[ProcessName] [varchar](max) NULL,                             				--工序名称
+	[Peak] [decimal](18, 4) NULL,												--峰期
+	[Valley] [decimal](18, 4) NULL,												--谷期
+	[Flat] [decimal](18, 4) NULL,												--平期
+	[Amountto] [decimal](18, 4) NULL								    		--合计
 )
 GO
 
 CREATE TABLE [dbo].[table_ForumulaYear](										--公式峰谷平用电统计年报表
-[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      						--主键ID
-[KeyID] [uniqueidentifier] NULL,                        						--生产机构ID
-[vDate] [nchar](2) NULL,														
-[LevelCode] [char](20) NULL,                            						--层次码
-[ProcessName] [varchar](max) NULL,                             					--工序名称
-[Peak] [decimal](18, 4) NULL,													--峰期
-[Valley] [decimal](18, 4) NULL,													--谷期
-[Flat] [decimal](18, 4) NULL,													--平期
-[Amountto] [decimal](18, 4) NULL								    			--合计
+	[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					--主键ID
+	[KeyID] [uniqueidentifier] NULL,                        					--生产机构ID
+	[vDate] [nchar](2) NULL,														
+	[LevelCode] [char](20) NULL,                            					--层次码
+	[ProcessName] [varchar](max) NULL,                             				--工序名称
+	[Peak] [decimal](18, 4) NULL,												--峰期
+	[Valley] [decimal](18, 4) NULL,												--谷期
+	[Flat] [decimal](18, 4) NULL,												--平期
+	[Amountto] [decimal](18, 4) NULL								    		--合计
 )
 GO
 
 CREATE TABLE [dbo].[table_PublicFormulaDay](									--公共公式峰谷平用电统计日报表
-[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      						--主键ID
-[KeyID] [uniqueidentifier] NULL,                        						--生产机构ID
-[vDate] [nchar](2) NULL,														
-[LevelCode] [char](20) NULL,                            						--层次码
-[ProcessName] [varchar](max) NULL,                             					--工序名称
-[Peak] [decimal](18, 4) NULL,													--峰期
-[Valley] [decimal](18, 4) NULL,													--谷期
-[Flat] [decimal](18, 4) NULL,													--平期
-[Amountto] [decimal](18, 4) NULL								    			--合计
+	[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					--主键ID
+	[KeyID] [uniqueidentifier] NULL,                        					--生产机构ID
+	[vDate] [nchar](2) NULL,														
+	[LevelCode] [char](20) NULL,                            					--层次码
+	[ProcessName] [varchar](max) NULL,                             				--工序名称
+	[Peak] [decimal](18, 4) NULL,												--峰期
+	[Valley] [decimal](18, 4) NULL,												--谷期
+	[Flat] [decimal](18, 4) NULL,												--平期
+	[Amountto] [decimal](18, 4) NULL								    		--合计
 )
 GO
 
 CREATE TABLE [dbo].[table_PublicFormulaMonth](									--公共公式峰谷平用电统计月报表
-[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      						--主键ID
-[KeyID] [uniqueidentifier] NULL,                        						--生产机构ID
-[vDate] [nchar](2) NULL,														
-[LevelCode] [char](20) NULL,                            						--层次码
-[ProcessName] [varchar](max) NULL,                             					--工序名称
-[Peak] [decimal](18, 4) NULL,													--峰期
-[Valley] [decimal](18, 4) NULL,													--谷期
-[Flat] [decimal](18, 4) NULL,													--平期
-[Amountto] [decimal](18, 4) NULL								    			--合计
+	[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					--主键ID
+	[KeyID] [uniqueidentifier] NULL,                        					--生产机构ID
+	[vDate] [nchar](2) NULL,														
+	[LevelCode] [char](20) NULL,                            					--层次码
+	[ProcessName] [varchar](max) NULL,                             				--工序名称
+	[Peak] [decimal](18, 4) NULL,												--峰期
+	[Valley] [decimal](18, 4) NULL,												--谷期
+	[Flat] [decimal](18, 4) NULL,												--平期
+	[Amountto] [decimal](18, 4) NULL								    		--合计
 )
 GO
 
 CREATE TABLE [dbo].[table_PublicForumulaYear](									--公共公式峰谷平用电统计年报表
-[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      						--主键ID
-[KeyID] [uniqueidentifier] NULL,                        						--生产机构ID
-[vDate] [nchar](2) NULL,														
-[LevelCode] [char](20) NULL,                            						--层次码
-[ProcessName] [varchar](max) NULL,                             					--工序名称
-[Peak] [decimal](18, 4) NULL,													--峰期
-[Valley] [decimal](18, 4) NULL,													--谷期
-[Flat] [decimal](18, 4) NULL,													--平期
-[Amountto] [decimal](18, 4) NULL								    			--合计
+	[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					--主键ID
+	[KeyID] [uniqueidentifier] NULL,                        					--生产机构ID
+	[vDate] [nchar](2) NULL,														
+	[LevelCode] [char](20) NULL,                            					--层次码
+	[ProcessName] [varchar](max) NULL,                             				--工序名称
+	[Peak] [decimal](18, 4) NULL,												--峰期
+	[Valley] [decimal](18, 4) NULL,												--谷期
+	[Flat] [decimal](18, 4) NULL,												--平期
+	[Amountto] [decimal](18, 4) NULL								    		--合计
+)
+GO
+
+CREATE TABLE [dbo].[table_FormulaGroupDay](										--公式分组峰谷平用电统计日报表
+	[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					--主键ID
+	[KeyID] [uniqueidentifier] NULL,                        					--生产机构ID
+	[vDate] [nchar](2) NULL,														
+	[LevelCode] [char](20) NULL,                            					--层次码
+	[ProcessName] [varchar](max) NULL,                             				--工序名称
+	[FirstGroup] [decimal](18, 4) NULL,											--甲班
+	[SecondGroup] [decimal](18, 4) NULL,										--乙班
+	[ThirdGroup] [decimal](18, 4) NULL,											--丙班
+	[Amountto] [decimal](18, 4) NULL								    		--合计
 )
 GO
 
 CREATE TABLE [dbo].[table_PublicFormulaGroupDay](								--公共公式分组峰谷平用电统计日报表
-[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      						--主键ID
-[KeyID] [uniqueidentifier] NULL,                        						--生产机构ID
-[vDate] [nchar](2) NULL,														
-[LevelCode] [char](20) NULL,                            						--层次码
-[ProcessName] [varchar](max) NULL,                             					--工序名称
-[FirstGroup] [decimal](18, 4) NULL,												--甲班
-[SecondGroup] [decimal](18, 4) NULL,											--乙班
-[ThirdGroup] [decimal](18, 4) NULL,												--丙班
-[Amountto] [decimal](18, 4) NULL								    			--合计
+	[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					--主键ID
+	[KeyID] [uniqueidentifier] NULL,                        					--生产机构ID
+	[vDate] [nchar](2) NULL,														
+	[LevelCode] [char](20) NULL,                            					--层次码
+	[ProcessName] [varchar](max) NULL,                             				--工序名称
+	[FirstGroup] [decimal](18, 4) NULL,											--甲班
+	[SecondGroup] [decimal](18, 4) NULL,										--乙班
+	[ThirdGroup] [decimal](18, 4) NULL,											--丙班
+	[Amountto] [decimal](18, 4) NULL								    		--合计
 )
 GO
 
