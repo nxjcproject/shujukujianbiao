@@ -9,7 +9,7 @@ CREATE TABLE [dbo].[table_AmmeterPeakerValleyFlatDay](							-- 电表峰谷平�
 	[ElectricRoom] [char](40) NULL,												-- 所属电气室
 	[Peak_Electricity] [decimal](18, 4) default(0) NULL,    					-- 峰期电量
 	[Valley_Electricity] [decimal](18, 4) default(0) NULL,  					-- 谷期电量
-	[Flat_Electricity] [decimal](18, 4) default(0) NULL     					-- 平期电量
+	[Flat_Electricity] [decimal](18, 4) default(0) NULL,     					-- 平期电量
 	[Sum_Electricity] [decimal](18, 4) default(0) NULL     						-- 合计电量
 )
 GO
@@ -22,7 +22,7 @@ CREATE TABLE [dbo].[table_AmmeterPeakerValleyFlatMonth](						-- 电表峰谷平
 	[ElectricRoom] [char](40) NULL,												-- 所属电气室
 	[Peak_Electricity] [decimal](18, 4) default(0) NULL,    					-- 峰期电量
 	[Valley_Electricity] [decimal](18, 4) default(0) NULL,  					-- 谷期电量
-	[Flat_Electricity] [decimal](18, 4) default(0) NULL     					-- 平期电量
+	[Flat_Electricity] [decimal](18, 4) default(0) NULL,     					-- 平期电量
 	[Sum_Electricity] [decimal](18, 4) default(0) NULL     						-- 合计电量
 )
 GO
@@ -35,7 +35,7 @@ CREATE TABLE [dbo].[table_AmmeterPeakerValleyFlatYear](							-- 电表峰谷平
 	[ElectricRoom] [char](40) NULL,												-- 所属电气室	
 	[Peak_Electricity] [decimal](18, 4) default(0) NULL,    					-- 峰期电量
 	[Valley_Electricity] [decimal](18, 4) default(0) NULL,  					-- 谷期电量
-	[Flat_Electricity] [decimal](18, 4) default(0) NULL     					-- 平期电量
+	[Flat_Electricity] [decimal](18, 4) default(0) NULL,     					-- 平期电量
 	[Sum_Electricity] [decimal](18, 4) default(0) NULL     						-- 合计电量
 )
 GO
@@ -66,7 +66,7 @@ CREATE TABLE [dbo].[table_FormulaMonth](										--公式峰谷平用电统计�
 )
 GO
 
-CREATE TABLE [dbo].[table_ForumulaYear](										--公式峰谷平用电统计年报表
+CREATE TABLE [dbo].[table_FormulaYear](											--公式峰谷平用电统计年报表
 	[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					--主键ID
 	[KeyID] [uniqueidentifier] NULL,                        					--生产机构ID
 	[vDate] [nchar](2) NULL,														
@@ -105,7 +105,7 @@ CREATE TABLE [dbo].[table_PublicFormulaMonth](									--公共公式峰谷平�
 )
 GO
 
-CREATE TABLE [dbo].[table_PublicForumulaYear](									--公共公式峰谷平用电统计年报表
+CREATE TABLE [dbo].[table_PublicFormulaYear](									--公共公式峰谷平用电统计年报表
 	[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					--主键ID
 	[KeyID] [uniqueidentifier] NULL,                        					--生产机构ID
 	[vDate] [nchar](2) NULL,														
