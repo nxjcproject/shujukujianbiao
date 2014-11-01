@@ -77,7 +77,7 @@ CREATE TABLE [dbo].[report_ClinkerProductionLineEnergyConsumptionSchedule](		-- 
 ) 
 GO
 
-CREATE TABLE [dbo].[report_CementMillProductionLineProductionLineEnergyConsumptionSchedule](
+CREATE TABLE [dbo].[report_CementMillProductionLineEnergyConsumptionSchedule](
 																				-- 水泥生产线能耗计划
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
     [KeyID] [uniqueidentifier] NULL,                        					-- 报表引领表ID
