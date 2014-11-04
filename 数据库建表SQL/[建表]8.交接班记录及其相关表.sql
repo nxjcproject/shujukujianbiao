@@ -5,7 +5,7 @@
 
 CREATE TABLE [dbo].[shift_WorkingTeamShiftLog](									-- 交接班记录
 	[WorkingTeamShiftLogID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,		-- 交接班记录ID
-	[OrganizationID] [uniqueidentifier] NULL,									-- 生产机构ID
+	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
 	[ShiftDate] [datetime] NULL,												-- 交接班时间
 	[Shifts] [nchar](2) NULL,													-- 班次（1：甲班，2：乙班，3：丙班）
 	[WorkingTeam] [nchar](2) NULL,												-- 班组（1：A组，2：B组，3：C组，4：D组）
@@ -33,14 +33,14 @@ GO
 
 CREATE TABLE [dbo].[system_WorkingSection](										-- 工段信息
 	[WorkingSectionID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,			-- 工段信息ID
-	[OrganizationID] [uniqueidentifier] NULL,									-- 生产机构ID
+	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
 	[CreatedDate] [Datetime] NULL,												-- 创建日期
 	[Name] [nvarchar](50) NULL,													-- 工段名称
 	[Remarks] [nvarchar](100) NULL,												-- 备注
 )
 
 CREATE TABLE [dbo].[system_WorkingTeam](										-- 班组（由生产机构ID与班组名称唯一确定一条记录）
-	[OrganizationID] [uniqueidentifier] NULL,									-- 生产机构ID
+	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
 	[Name] [nchar](2) NULL,														-- 班组名称
 	[ChargeManID] [nvarchar](50) NULL,											-- 负责人ID
 	[Remarks] [nvarchar](100) NULL												-- 备注
@@ -49,7 +49,7 @@ GO
 
 CREATE TABLE [dbo].[system_StaffInfo](											-- 员工信息
 	[StaffInfoID] [nvarchar](50) NOT NULL,										-- 员工信息ID
-	[OrganizationID] [uniqueidentifier] NULL,									-- 生产机构ID（分厂）
+	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID（分厂）
 	[WorkingTeamName] [nchar](2) NULL,											-- 所属班组名称
 	[Name] [nvarchar](20) NULL,													-- 姓名
 	[Sex] [bit] NULL,															-- 性别
@@ -59,7 +59,7 @@ GO
 
 CREATE TABLE [dbo].[shift_DCSWarningLog](										-- DCS报警记录
 	[DCSWarningLogID] [int] IDENTITY(1,1) NOT NULL,								-- DCS报警记录ID
-	[OrganizationID] [uniqueidentifier] NULL,									-- 生产机构ID
+	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
 	[WorkingTeamShiftLogID] [uniqueidentifier] NULL,							-- 所属交接班记录ID
 	[Label] [nvarchar](30) NULL,												-- 报警标签
 	[StartingTime] [datetime] NULL,												-- 起始时间
@@ -71,7 +71,7 @@ GO
 
 CREATE TABLE [dbo].[shift_MachineHaltLog](										-- 停机记录
 	[MachineHaltLogID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,			-- 停机记录ID
-	[OrganizationID] [uniqueidentifier] NULL,									-- 生产机构ID
+	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
 	[WorkingTeamShiftLogID] [uniqueidentifier] NULL,							-- 所属交接班记录ID
 	[Label] [nvarchar](30) NOT NULL,											-- 停机标签
 	[EquipmentName] [nvarchar](50) NULL,										-- 停机设备名称
@@ -85,7 +85,7 @@ GO
 
 CREATE TABLE [dbo].[shift_SlaverHaltDelayAlarmLog](								-- 从机拖延停机记录
 	[MachineHaltLogID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,			-- 停机记录ID
-	[OrganizationID] [uniqueidentifier] NULL,									-- 生产机构ID
+	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
 	[WorkingTeamShiftLogID] [uniqueidentifier] NULL,							-- 所属交接班记录ID
 	[Label] [nvarchar](30) NOT NULL,											-- 从机标签
 	[EquipmentName] [nvarchar](50) NULL,										-- 从机设备名称
@@ -100,7 +100,7 @@ GO
 
 CREATE TABLE [dbo].[shift_EnergyConsumptionAlarmLog](							-- 能耗报警记录
 	[EnergyConsumptionAlarmLogID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,	-- 能耗报警记录ID
-	[OrganizationID] [uniqueidentifier] NULL,									-- 生产机构ID
+	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
 	[WorkingTeamShiftLogID] [uniqueidentifier] NULL,							-- 所属交接班记录ID	
 	[AlarmTime] [datetime] NULL,												--报警时间
 	[AlarmType] [nchar](4) NULL, 												--报警类别（1：电耗超标，2：功率超标，2：煤耗超标）
@@ -117,7 +117,7 @@ GO
 
 CREATE TABLE [dbo].[system_ShiftDescription](									-- 班次描述表
 	[ShiftDescriptionID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,			-- 班次描述表ID
-	[OrganizationID] [uniqueidentifier] NULL,									-- 生产机构ID
+	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
 	[Shifts] [nchar](2) NULL,													-- 班次（1：甲班，2：乙班，3：丙班）
 	[StartTime] [time](7) NULL,													-- 起始时间
 	[EndTime] [time](7) NULL,													-- 终止时间

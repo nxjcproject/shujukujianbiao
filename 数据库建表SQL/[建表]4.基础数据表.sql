@@ -12,7 +12,7 @@ GO
 
 CREATE TABLE [dbo].[system_ElectricityConsumptionAlarmParameterSetting](		-- 电耗报警参数设置
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
-	[OrganizationID] [uniqueidentifier] NULL,									-- 生产机构ID
+	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
 	[LevelCode] [char](20) NULL,                            					-- 层次码
 	[Name] [char](100) NULL,                                					-- 工序名称
 	[StandardValue] [decimal](18, 4) NULL,                  					-- 标准值
@@ -23,7 +23,7 @@ GO
 
 CREATE TABLE [dbo].[system_CoalConsumptionAlarmParameterSetting](  				-- 煤耗报警参数设置
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
-	[OrganizationID] [uniqueidentifier] NULL,									-- 生产机构ID
+	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
 	[Name] [char](20) NULL,                                 					-- 名称（此表只有一行，name填写“熟料煤耗”）
 	[StandardValue] [decimal](18, 4) NULL,                  					-- 标准值
 	[AlarmValue] [decimal](18, 4) NULL,                     					-- 报警值
@@ -31,13 +31,13 @@ CREATE TABLE [dbo].[system_CoalConsumptionAlarmParameterSetting](  				-- 煤耗报
 )
 GO
 
-CREATE TABLE [dbo].[system_AlarmCycle](                     					-- 能耗报警报警周期设置
-    [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
-	[OrganizationID] [uniqueidentifier] NULL,									-- 生产机构ID
-	[CycleCode] [int] NULL,                                 					-- 不同周期的编号
-	[TimeSpan] [int] NULL                                   					-- 周期时间长度
-)
-GO
+--CREATE TABLE [dbo].[system_AlarmCycle](                     					-- 能耗报警报警周期设置
+--    [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
+--	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
+--	[CycleCode] [int] NULL,                                 					-- 不同周期的编号
+--	[TimeSpan] [int] NULL                                   					-- 周期时间长度
+--)
+--GO
 
 CREATE TABLE [dbo].[system_KPI](												-- KPI对比指标维护表
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,							-- 主键ID
@@ -73,19 +73,26 @@ GO
 
 CREATE TABLE [dbo].[system_PeakValleyFlatElectrovalence](						-- 峰谷平分时电价表
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
-    [OrganizationID] [uniqueidentifier] NULL,               					-- 生产机构ID
+    [OrganizationID] [varchar](64) NULL,               							-- 生产机构ID
 	[PeakElectrovalence][decimal](6, 4) NULL,               					-- 峰期电价
 	[ValleyElectrovalence] [decimal](6, 4) NULL,            					-- 谷期电价
 	[FlatElectrovalence] [decimal](6, 4) NULL,              					-- 平期电价
 )
 GO
 
-CREATE TABLE [dbo].[system_PeakValleyFlat](										-- 峰谷平定义表
-    [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
-    [OrganizationID] [uniqueidentifier] NULL,                                	-- 生产机构ID
+CREATE TABLE [dbo].[PVF_Detail](												-- 峰谷平定义表
+    [KeyID] [uniqueidentifier] NULL,											-- 引领ID
 	[StartTime] [char](10) NULL,                            					-- 开始时间
 	[EndTime] [char](10) NULL,                              					-- 终止时间
 	[Type][char](10) NULL,                                  					-- 类型 （峰期 ；谷期 ；平期）
+)
+GO
+CREATE TABLE [dbo].[tz_PVF](													-- 峰谷平定义表
+    [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
+    [OrganizationID] [varchar](64) NULL,                                		-- 生产机构ID
+	[StartUsing] [datetime] NULL,                            					-- 启用时间
+	[EndUsing] [datetime] NULL,                              					-- 停用时间
 	[Flag] [bit] NULL                                       					-- 启用标志
+	[KeyID] [uniqueidentifier] NULL,											-- 引领ID
 )
 GO

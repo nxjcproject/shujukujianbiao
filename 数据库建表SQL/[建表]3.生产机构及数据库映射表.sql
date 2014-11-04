@@ -3,7 +3,7 @@
 	所有表都建立在管理数据库中
 */
 CREATE TABLE [dbo].[system_Organization](										-- 组织机构结构表
-	[OrganizationID] [uniqueidentifier] DEFAULT (newid()) NOT NULL,				-- 生成机构ID（GUID自动生成）
+	[OrganizationID] [varchar](64) DEFAULT (newid()) NOT NULL,					-- 生成机构ID（GUID自动生成）
 	[LevelCode] [varchar](20) NULL,												-- 生产机构层次码
 	[DatabaseID] [uniqueidentifier] NULL,										-- 数据库ID
 	[Name] [nvarchar](50) NULL,													-- 生产机构名称

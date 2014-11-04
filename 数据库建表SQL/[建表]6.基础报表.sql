@@ -43,7 +43,7 @@ GO
 CREATE TABLE [dbo].[table_FormulaDay](											--公式峰谷平用电统计日报表
 	[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					--主键ID
 	[KeyID] [uniqueidentifier] NULL,                        					--生产机构ID
-	[vDate] [nchar](2) NULL,														
+	--[vDate] [nchar](2) NULL,														
 	[LevelCode] [char](20) NULL,                            					--层次码
 	[ProcessName] [varchar](max) NULL,                             				--工序名称
 	[Peak] [decimal](18, 4) NULL,												--峰期
@@ -82,7 +82,7 @@ GO
 CREATE TABLE [dbo].[table_PublicFormulaDay](									--公共公式峰谷平用电统计日报表
 	[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					--主键ID
 	[KeyID] [uniqueidentifier] NULL,                        					--生产机构ID
-	[vDate] [nchar](2) NULL,														
+	--[vDate] [nchar](2) NULL,														
 	[LevelCode] [char](20) NULL,                            					--层次码
 	[ProcessName] [varchar](max) NULL,                             				--工序名称
 	[Peak] [decimal](18, 4) NULL,												--峰期
@@ -121,7 +121,7 @@ GO
 CREATE TABLE [dbo].[table_FormulaGroupDay](										--公式分组峰谷平用电统计日报表
 	[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					--主键ID
 	[KeyID] [uniqueidentifier] NULL,                        					--生产机构ID
-	[vDate] [nchar](2) NULL,														
+	--[vDate] [nchar](2) NULL,														
 	[LevelCode] [char](20) NULL,                            					--层次码
 	[ProcessName] [varchar](max) NULL,                             				--工序名称
 	[FirstGroup] [decimal](18, 4) NULL,											--甲班
@@ -134,7 +134,7 @@ GO
 CREATE TABLE [dbo].[table_PublicFormulaGroupDay](								--公共公式分组峰谷平用电统计日报表
 	[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					--主键ID
 	[KeyID] [uniqueidentifier] NULL,                        					--生产机构ID
-	[vDate] [nchar](2) NULL,														
+	--[vDate] [nchar](2) NULL,														
 	[LevelCode] [char](20) NULL,                            					--层次码
 	[ProcessName] [varchar](max) NULL,                             				--工序名称
 	[FirstGroup] [decimal](18, 4) NULL,											--甲班

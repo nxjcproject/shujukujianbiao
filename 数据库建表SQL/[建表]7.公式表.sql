@@ -4,7 +4,7 @@
 */
 CREATE TABLE [dbo].[tz_Formula](												-- 公式引领表
 	[KeyID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,						-- 公式引领表ID
-	[OrganizationID] [uniqueidentifier] NULL,									-- 所属组织机构ID（公共：分厂，系统及自定义：生产线）
+	[OrganizationID] [varchar](64) NULL,										-- 所属组织机构ID（公共：分厂，系统及自定义：生产线）
 	[Name] [nvarchar](50) NULL,													-- 公式组名称
 	[CreatedDate] [datetime] NULL,												-- 公式组创建日期
 	[Type] [int] DEFAULT(0) NULL,												-- 公式类型（1：公共，2：系统，3：自定义）

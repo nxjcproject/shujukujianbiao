@@ -4,7 +4,7 @@
 	采集到的电表数据存储在表名为 Ammeter 表中（分History/Realtime）
 */
 CREATE TABLE [dbo].[AmmeterContrast](											-- 电表对照表
-	[OrganizationID] [uniqueidentifier] NULL,									-- 生产机构ID
+	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
 	[AmmeterNumber] [char](30) NULL,											-- 电表层次码
 	[AmmeterName] [char](30) NULL,												-- 电表名称
 	[AmmeterSource] [bit] NULL,													-- 电表来源（0表示来自串口，1表示来自电力需求侧）

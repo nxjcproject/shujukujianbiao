@@ -4,7 +4,7 @@
 
 CREATE TABLE [dbo].[DCSContrast](												-- DCS点号对照表
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,                          --主键ID
-	[OrganizationID] [uniqueidentifier] NULL,				                    -- 生产机构ID
+	[OrganizationID] [varchar](64) NULL,				                    	-- 生产机构ID
 	[Process] [char](30) NULL,													-- 生产环节（熟料、水泥磨、余热发电）  （张迪保留）
 	[VariableName] [char](30) NULL,												-- 变量名称（变量名称命名不可以数字开头，是为开发其他系统通用性考虑，以及在前台配置标签时ID的命名约束）
 	[VariableDescription] [varchar](max) NULL,									-- 变量描述
@@ -25,7 +25,7 @@ GO
 	
 CREATE TABLE [dbo].[MasterMachinedescription](								    -- DCS主机描述
     [ID] [uniqueidentifier]  NOT NULL,                                          -- 主键ID
-	[OrganizationID] [uniqueidentifier] NULL,				                    -- 生产机构ID
+	[OrganizationID] [varchar](64) NULL,				                    	-- 生产机构ID
 	[VariableName] [char](30) NULL,												-- 变量名称（变量名称命名不可以数字开头，是为开发其他系统通用性考虑，以及在前台配置标签时ID的命名约束）
 	[VariableDescription] [varchar](max) NULL,									-- 变量描述
 	[Record] [bit] NULL,                                                        -- 是否记录主机停机信息
@@ -37,7 +37,7 @@ GO
 
 CREATE TABLE [dbo].[SlaveMachinedescription](								    -- DCS从机描述
     [ID] [uniqueidentifier]  NOT NULL,                                          -- 主键ID
-	[OrganizationID] [uniqueidentifier] NULL,				                    -- 生产机构ID
+	[OrganizationID] [varchar](64) NULL,				                    	-- 生产机构ID
 	[KeyID] [uniqueidentifier] NULL							                    -- 主机Key_id
 	[VariableName] [char](30) NULL,												-- 变量名称（变量名称命名不可以数字开头，是为开发其他系统通用性考虑，以及在前台配置标签时ID的命名约束）
 	[VariableDescription] [varchar](max) NULL,									-- 变量描述
