@@ -90,8 +90,8 @@ GO
 CREATE TABLE [dbo].[tz_PVF](													-- 峰谷平定义表
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
     [OrganizationID] [varchar](64) NULL,                                		-- 生产机构ID
-	[StartUsing] [datetime] NULL,                            					-- 启用时间
-	[EndUsing] [datetime] NULL,                              					-- 停用时间
+	[StartUsing] [date] NULL,                            						-- 启用时间
+	[EndUsing] [date] NULL,                              						-- 停用时间
 	[Flag] [bit] NULL                                       					-- 启用标志
 	[KeyID] [uniqueidentifier] NULL,											-- 引领ID
 )
