@@ -53,7 +53,8 @@ CREATE TABLE [dbo].[system_StaffInfo](											-- 员工信息
 	[WorkingTeamName] [nchar](2) NULL,											-- 所属班组名称
 	[Name] [nvarchar](20) NULL,													-- 姓名
 	[Sex] [bit] NULL,															-- 性别
-	[PhoneNumber] [nvarchar](50) NULL											-- 联系电话
+	[PhoneNumber] [nvarchar](50) NULL,											-- 联系电话 
+	[Enabled] [bit] NULL														---------------ml-----------------
 )
 GO
 
@@ -94,7 +95,7 @@ CREATE TABLE [dbo].[shift_SlaverHaltDelayAlarmLog](								-- 从机拖延停机
 	[MasterHaltTime] [datetime] NULL,										    -- 主机停机时刻
 	[WarmingTime] [datetime] NULL,												-- 从机拖延报警时刻
     [detail] [nvarchar](200) NULL,											    -- 从机拖延停机情况描述
-	[ReasonText] [nvarchar](200) NULL,											-- 情况说明（由当班人员在交接班记录中填写）
+	[ReasonText] [nvarchar](200) NULL											-- 情况说明（由当班人员在交接班记录中填写）
 )
 GO
 
@@ -116,7 +117,7 @@ CREATE TABLE [dbo].[shift_EnergyConsumptionAlarmLog](							-- 能耗报警记�
 GO
 
 CREATE TABLE [dbo].[system_ShiftDescription](									-- 班次描述表
-	[ShiftDescriptionID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,			-- 班次描述表ID
+	[ShiftDescriptionID] [uniqueidentifier] DEFAULT(newid()) NULL,				-- 班次描述表ID
 	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
 	[Shifts] [nchar](2) NULL,													-- 班次（1：甲班，2：乙班，3：丙班）
 	[StartTime] [time](7) NULL,													-- 起始时间

@@ -3,7 +3,7 @@
 */
 
 CREATE TABLE [dbo].[DCSContrast](												-- DCS点号对照表
-    [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,                          --主键ID
+    [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,                          -- 主键ID
 	[OrganizationID] [varchar](64) NULL,				                    	-- 生产机构ID
 	[Process] [char](30) NULL,													-- 生产环节（熟料、水泥磨、余热发电）  （张迪保留）
 	[VariableName] [char](30) NULL,												-- 变量名称（变量名称命名不可以数字开头，是为开发其他系统通用性考虑，以及在前台配置标签时ID的命名约束）

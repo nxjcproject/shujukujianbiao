@@ -80,19 +80,20 @@ CREATE TABLE [dbo].[system_PeakValleyFlatElectrovalence](						-- 峰谷平分时电价
 )
 GO
 
-CREATE TABLE [dbo].[PVF_Detail](												-- 峰谷平定义表
+CREATE TABLE [dbo].[system_PVF_Detail](											-- 峰谷平定义表
+	[ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
     [KeyID] [uniqueidentifier] NULL,											-- 引领ID
 	[StartTime] [char](10) NULL,                            					-- 开始时间
 	[EndTime] [char](10) NULL,                              					-- 终止时间
-	[Type][char](10) NULL,                                  					-- 类型 （峰期 ；谷期 ；平期）
+	[Type][char](10) NULL                                 						-- 类型 （峰期 ；谷期 ；平期）
 )
 GO
-CREATE TABLE [dbo].[tz_PVF](													-- 峰谷平定义表
+CREATE TABLE [dbo].[system_PVF](												-- 峰谷列表
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
     [OrganizationID] [varchar](64) NULL,                                		-- 生产机构ID
 	[StartUsing] [date] NULL,                            						-- 启用时间
 	[EndUsing] [date] NULL,                              						-- 停用时间
-	[Flag] [bit] NULL                                       					-- 启用标志
-	[KeyID] [uniqueidentifier] NULL,											-- 引领ID
+	[Flag] [bit] NULL,                                       					-- 启用标志
+	[KeyID] [uniqueidentifier] NULL												-- 引领ID
 )
 GO
