@@ -59,7 +59,7 @@ CREATE TABLE [dbo].[system_StaffInfo](											-- 员工信息
 GO
 
 CREATE TABLE [dbo].[shift_DCSWarningLog](										-- DCS报警记录
-	[DCSWarningLogID] [int] IDENTITY(1,1) NOT NULL,								-- DCS报警记录ID
+	[DCSWarningLogID] [uniqueidentifier] DEFAULT(newid()) NULL,					-- DCS报警记录ID
 	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
 	[WorkingTeamShiftLogID] [uniqueidentifier] NULL,							-- 所属交接班记录ID
 	[Label] [nvarchar](30) NULL,												-- 报警标签
@@ -79,7 +79,7 @@ CREATE TABLE [dbo].[shift_MachineHaltLog](										-- 停机记录
 	[HaltTime] [datetime] NULL,													-- 停机时间
 	[RecoverTime] [datetime] NULL,												-- 恢复时间
 	[ReasonID] [char](8) NULL,													-- 停机具体原因ID
-	[ReasonText] [nvarchar](200) NULL,											-- 停机原因（三级停机内容均填写，逗号隔开）
+	[ClassifyReasonText] [nvarchar](200) NULL,									-- 停机原因（三级停机内容均填写，逗号隔开）
 	[Remarks] [nvarchar](100) NULL												-- 备注
 )
 GO
@@ -93,7 +93,7 @@ CREATE TABLE [dbo].[shift_SlaverHaltDelayAlarmLog](								-- 从机拖延停机
 	[MasterLabel] [nvarchar](30) NOT NULL,									    -- 主机标签
 	[MasterEquipmentName] [nvarchar](50) NULL,									-- 主机设备名称
 	[MasterHaltTime] [datetime] NULL,										    -- 主机停机时刻
-	[WarmingTime] [datetime] NULL,												-- 从机拖延报警时刻
+	[WarningTime] [datetime] NULL,												-- 从机拖延报警时刻
     [detail] [nvarchar](200) NULL,											    -- 从机拖延停机情况描述
 	[ReasonText] [nvarchar](200) NULL											-- 情况说明（由当班人员在交接班记录中填写）
 )
@@ -103,8 +103,8 @@ CREATE TABLE [dbo].[shift_EnergyConsumptionAlarmLog](							-- 能耗报警记�
 	[EnergyConsumptionAlarmLogID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,	-- 能耗报警记录ID
 	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
 	[WorkingTeamShiftLogID] [uniqueidentifier] NULL,							-- 所属交接班记录ID	
-	[AlarmTime] [datetime] NULL,												--报警时间
-	[AlarmType] [nchar](4) NULL, 												--报警类别（1：电耗超标，2：功率超标，2：煤耗超标）
+	[AlarmTime] [datetime] NULL,												-- 报警时间
+	[AlarmType] [nchar](4) NULL, 												-- 报警类别（1：电耗超标，2：功率超标，2：煤耗超标）
 	[StartingTime] [datetime] NULL,												-- 超标起始时间
 	[EndingTime] [datetime] NULL,												-- 超标结束时间
 	[LevelCode] [nvarchar](50) NOT NULL,										-- 层次码	

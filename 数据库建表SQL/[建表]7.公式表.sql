@@ -18,6 +18,7 @@ CREATE TABLE [dbo].[formula_FormulaDetail](										-- 公式表（包括公共、系统、
 	[Name] [nvarchar](50) NULL,													-- 工序名称
 	[Formula] [nvarchar](400) NULL,												-- 公式
 	[Denominator] [nvarchar](MAX) NULL,											-- 电耗(分母公式)
+	[Required] [bit] DEFAULT(0) NULL,											-- 必选
 	[AlarmType] [int] DEFAULT(0) NULL,											-- 报警类型：1——能耗，  2——功率，  3——能耗和功率
 	[EnergyAlarmValue] [decimal](8, 2) NULL,									-- 电耗报警值
 	[PowerAlarmValue] [decimal](8, 2) NULL,										-- 功率报警值
@@ -25,6 +26,7 @@ CREATE TABLE [dbo].[formula_FormulaDetail](										-- 公式表（包括公共、系统、
 	[Remarks] [nvarchar](MAX) NULL												-- 备注
 )
 GO
+
 
 CREATE TABLE [dbo].[formula_ConsumptionAlarmSetting](							-- 能耗报警设置
 	[KeyID] [uniqueidentifier] NULL,											-- 电耗报警公式引领ID
