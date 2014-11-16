@@ -107,8 +107,8 @@ CREATE TABLE [dbo].[shift_EnergyConsumptionAlarmLog](							-- 能耗报警记�
 	[AlarmType] [nchar](4) NULL, 												-- 报警类别（1：电耗超标，2：功率超标，2：煤耗超标）
 	[StartingTime] [datetime] NULL,												-- 超标起始时间
 	[EndingTime] [datetime] NULL,												-- 超标结束时间
-	[LevelCode] [nvarchar](50) NOT NULL,										-- 层次码	
-	[Name] [nvarchar](20) NULL,													-- 参数名称
+	[FormulaDetailID] [uniqueidentifier] NULL,									-- FormulaDetailID	------------------------------
+	[ParameterName] [nvarchar](20) NULL,										-- 参数名称        -------------------------
 	[StandardValue] [real] NULL,												-- 标准值
 	[ActualValue] [real] NULL,													-- 实际值
 	[Superscale] [real] NULL,													-- 超调量

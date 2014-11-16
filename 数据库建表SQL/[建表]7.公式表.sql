@@ -13,9 +13,10 @@ CREATE TABLE [dbo].[tz_Formula](												-- 公式引领表
 GO
 
 CREATE TABLE [dbo].[formula_FormulaDetail](										-- 公式表（包括公共、系统、自定义）
+	[ID] [uniqueidentifier] DEFAULT(newid()) NULL,								-- 唯一ID               -----------------------------
 	[KeyID] [uniqueidentifier] NULL,											-- 公式引领ID
 	[LevelCode] [nvarchar](50) NOT NULL,										-- 层次码
-	[Name] [nvarchar](50) NULL,													-- 工序名称
+	[ProcessName] [nvarchar](50) NULL,											-- 工序名称           ----------------------------
 	[Formula] [nvarchar](400) NULL,												-- 公式
 	[Denominator] [nvarchar](MAX) NULL,											-- 电耗(分母公式)
 	[Required] [bit] DEFAULT(0) NULL,											-- 必选
@@ -39,6 +40,6 @@ GO
 CREATE TABLE [dbo].[formula_Log](
 	[KeyID] [uniqueidentifier] NOT NULL,
 	[EffectiveDate] [datetime] NULL,
-	[ExpirationDate] [datetime] NULL,
+	[ExpirationDate] [datetime] NULL
 )
 GO

@@ -40,7 +40,7 @@ CREATE TABLE [dbo].[report_ClinkerYeldPerUnitDistributionEnergyConsumptionYearly
 	[Clinker_DieselConsumption] [decimal](8, 1) NULL,                          	-- ÊìÁÏÓÍºÄ
 	[CogenerationSupplyCorrection][decimal](8, 1) NULL,                        	-- ÓàÈÈ·¢µçÉÏÍøµçÁ¿ÕÛºÏ±ê×¼Öµ
 	[Clinker_ComprehensiveEnergyConsumption] [decimal](8, 1) NULL,             	-- ÊìÁÏ×ÛºÏÄÜºÄ
-	[Clinker_ComparableComprehensiveEnergyConsumption] [decimal](8, 1) NULL,   	-- ¿É±ÈÊìÁÏ×ÛºÏÄÜºÄ
+	[Clinker_ComparableComprehensiveEnergyConsumption] [decimal](8, 1) NULL   	-- ¿É±ÈÊìÁÏ×ÛºÏÄÜºÄ
 ) 
 GO
 
@@ -52,7 +52,7 @@ CREATE TABLE [dbo].[report_CementYeldPerUnitDistributionPowerConsumptionYearly](
 	[Output] [bigint] NULL,                                 					-- Ë®Äà²úÁ¿
 	[ElectricityConsumption] [bigint] NULL,                 					-- ÓÃµçÁ¿
 	[DistributionPowerConsumption] [decimal](8, 2) NULL,   						-- ·Ö²½µçºÄ
-	[ConversionDistributionPowerConsumption] [decimal](8, 2) NULL,			 	-- ÕÛËãP.O42.5·Ö²¼µçºÄ
+	[ConversionDistributionPowerConsumption] [decimal](8, 2) NULL			 	-- ÕÛËãP.O42.5·Ö²¼µçºÄ
 ) 
 GO
 
@@ -124,7 +124,7 @@ CREATE TABLE [dbo].[report_CementMonthlyElectricityConsumption](				-- Ë®Äà(·ÖÆ·
     [Amountto_Output] [bigint] NULL,                             				-- ²úÁ¿
 	[Amountto_Electricity] [bigint] NULL,                        				-- µçÁ¿
     [Amountto_ElectricityConsumption]  [decimal](8, 2) NULL,          			-- µçºÄ
-	[Amountto_Convert_ElectricityConsumption]  [decimal](8, 2) NULL,    		-- ÕÛËãµçºÄ
+	[Amountto_Convert_ElectricityConsumption]  [decimal](8, 2) NULL    			-- ÕÛËãµçºÄ
 ) 
 GO
 
@@ -141,7 +141,7 @@ CREATE TABLE [dbo].[report_CementYearlyElectricityConsumption](					--Ë®Äà(·ÖÆ·Ö
     [ElectricityConsumption_Monthly]  [decimal](8, 2) NULL,             		--µçºÄ_±¾ÔÂ
 	[ElectricityConsumption_Accumulative]  [decimal](8, 2) NULL,             	--µçºÄ_ÀÛ¼Æ
 	[Convert_ElectricityConsumption_Monthly]  [decimal](8, 2) NULL,    			--ÕÛËãµçºÄ_±¾ÔÂ
-	[Convert_ElectricityConsumption_Accumulative]  [decimal](8, 2) NULL,    	--ÕÛËãµçºÄ_ÀÛ¼Æ
+	[Convert_ElectricityConsumption_Accumulative]  [decimal](8, 2) NULL    		--ÕÛËãµçºÄ_ÀÛ¼Æ
 )
 GO 
 
@@ -173,7 +173,7 @@ CREATE TABLE [dbo].[report_TeamCementClassificationMonthlyElectricityConsumption
     [Amountto_Output] [bigint] NULL,                             				--²úÁ¿
 	[Amountto_Electricity] [bigint] NULL,                        				--µçÁ¿
     [Amountto_ElectricityConsumption]  [decimal](8, 2) NULL,             		--µçºÄ
-	[Amountto_Convert_ElectricityConsumption]  [decimal](8, 2) NULL,     		--ÕÛËãµçºÄ
+	[Amountto_Convert_ElectricityConsumption]  [decimal](8, 2) NULL     		--ÕÛËãµçºÄ
 	
 ) 
 GO
@@ -208,7 +208,7 @@ CREATE TABLE [dbo].[report_TeamCementClassificationYearlyElectricityConsumption]
     [Amountto_Output] [bigint] NULL,                             				--²úÁ¿
 	[Amountto_Electricity] [bigint] NULL,                        				--µçÁ¿
     [Amountto_ElectricityConsumption]  [decimal](8, 2) NULL,           			--µçºÄ
-	[Amountto_Convert_ElectricityConsumption]  [decimal](8, 2) NULL,     		--ÕÛËãµçºÄ
+	[Amountto_Convert_ElectricityConsumption]  [decimal](8, 2) NULL     		--ÕÛËãµçºÄ
 	
 )
 GO
@@ -249,7 +249,7 @@ CREATE TABLE [dbo].[report_CementMilMonthlyPeakerValleyFlatElectricityConsumptio
 	[Amountto_Flat_Electricity] [bigint] NULL,                   				--Æ½ÆÚµçÁ¿
 	[Amountto_Sum_Electricity] [bigint] NULL,                    				--ºÏ¼ÆµçÁ¿
 	[Amountto_ElectricityConsumption] [decimal](8, 2) NULL,            			--µçºÄ
-	[Amountto_Cost] [decimal](8, 2) NULL,                               		--³É±¾
+	[Amountto_Cost] [decimal](8, 2) NULL                               			--³É±¾
 )
 GO
 
@@ -288,7 +288,7 @@ CREATE TABLE [dbo].[report_RawBatchMilMonthlyPeakerValleyFlatElectricityConsumpt
 	[Amountto_Flat_Electricity] [bigint] NULL,                   				--Æ½ÆÚµçÁ¿
 	[Amountto_Sum_Electricity] [bigint] NULL,                    				--ºÏ¼ÆµçÁ¿
 	[Amountto_ElectricityConsumption][decimal](8, 2) NULL,            			--µçºÄ
-	[Amountto_Cost] [decimal](8, 2) NULL,                              			--³É±¾
+	[Amountto_Cost] [decimal](8, 2) NULL                              			--³É±¾
 )
 GO
 
@@ -327,7 +327,7 @@ CREATE TABLE [dbo].[report_CoalMilMonthlyPeakerValleyFlatElectricityConsumption]
 	[Amountto_Flat_Electricity] [bigint] NULL,                   				--Æ½ÆÚµçÁ¿
 	[Amountto_Sum_Electricity] [bigint] NULL,                    				--ºÏ¼ÆµçÁ¿
 	[Amountto_ElectricityConsumption] [decimal](8, 2) NULL,            			--µçºÄ
-	[Amountto_Cost] [decimal](8, 2) NULL,                              			--³É±¾
+	[Amountto_Cost] [decimal](8, 2) NULL                              			--³É±¾
 )
 GO
 
@@ -374,7 +374,7 @@ CREATE TABLE [dbo].[report_ClinkerMonthlyPeakerValleyFlatElectricityConsumption]
 	[Amountto_Flat_Electricity] [decimal](18, 4) NULL,                   		--Æ½ÆÚµçÁ¿
 	[Amountto_Sum_Electricity] [decimal](18, 4) NULL,                    		--ºÏ¼ÆµçÁ¿
 	[Amountto_ElectricityConsumption] [decimal](8, 2) NULL,             		--µçºÄ
-	[Amountto_Cost] [decimal](8, 2) NULL,                               		--³É±¾
+	[Amountto_Cost] [decimal](8, 2) NULL	                               		--³É±¾
 )
 GO
 
@@ -405,7 +405,7 @@ CREATE TABLE [dbo].[report_ClinkerMonthlyCoalDustConsumption](					--ÊëÁÏÉú²úÓÃÃ
     [Amountto_KilnHead_CoalDust] [bigint] NULL,                  				--Ò¤Í·ÓÃÃºÁ¿
 	[Amountto_KilnTail_CoalDust] [bigint] NULL,                  				--Ò¤Î²ÓÃÃºÁ¿
 	[Amountto_sum_CoalDust] [bigint] NULL,                       				--ºÏ¼ÆÓÃÃºÁ¿
-	[Amountto_CoalDustConsumption] [decimal](8, 2) NULL,                		--ÃººÄ
+	[Amountto_CoalDustConsumption] [decimal](8, 2) NULL	                		--ÃººÄ
 )
 GO
 
@@ -426,9 +426,8 @@ CREATE TABLE [dbo].[report_MonthlyEnergyConsumption](        					--ÄÜÔ´ÏûºÄÔÂÍ³
 	[ElectricityConsumption_Cement] [decimal](8, 2) NULL,            			-- µçºÄ-Ë®ÄàÖÆ±¸
 	[ComprehensiveElectricityConsumption] [decimal](8, 2) NULL,      			-- ¶ÖÊìÁÏ×ÛºÏµçºÄ
 	[ComprehensiveCoalConsumption] [decimal](8, 2) NULL,             			-- ¶ÖÊìÁÏ×ÛºÏÊµÎïÃººÄ
-	[ComprehensiveElectricityOutput] [decimal](8, 2) NULL,           			-- ¶ÖÊìÁÏ·¢µçÁ¿
+	[ComprehensiveElectricityOutput] [decimal](8, 2) NULL           			-- ¶ÖÊìÁÏ·¢µçÁ¿
 ) 
-
 GO
 
 CREATE TABLE [dbo].[report_YearlyEnergyConsumption](         					--ÄÜÔ´ÏûºÄÄêÍ³¼Æ·ÖÎö±¨±í
@@ -448,7 +447,7 @@ CREATE TABLE [dbo].[report_YearlyEnergyConsumption](         					--ÄÜÔ´ÏûºÄÄêÍ³
 	[ElectricityConsumption_Cement] [decimal](8, 2) NULL,           			-- µçºÄ-Ë®ÄàÖÆ±¸
 	[ComprehensiveElectricityConsumption] [decimal](8, 2) NULL,      			-- ¶ÖÊìÁÏ×ÛºÏµçºÄ
 	[ComprehensiveCoalConsumption] [decimal](8, 2) NULL,             			-- ¶ÖÊìÁÏ×ÛºÏÊµÎïÃººÄ
-	[ComprehensiveElectricityOutput] [decimal](8, 2) NULL,          			-- ¶ÖÊìÁÏ·¢µçÁ¿
+	[ComprehensiveElectricityOutput] [decimal](8, 2) NULL	          			-- ¶ÖÊìÁÏ·¢µçÁ¿
 )
 GO
 
@@ -462,7 +461,7 @@ CREATE TABLE [dbo].[report_CementMilEnergyConsumption_TargetCompletion](		-- Ë®Ä
     [Monthly_Gap] [bigint] NULL,												-- ±¾ÔÂ²î¾à
 	[Yearly_Target] [bigint] NULL,												-- ±¾ÄêÖ¸±ê
 	[Yearly_Accumulative] [bigint] NULL,										-- ±¾ÄêÀÛ¼Æ
-    [Yearly_Gap] [bigint] NULL,													-- ±¾Äê²î¾à
+    [Yearly_Gap] [bigint] NULL													-- ±¾Äê²î¾à
 )
 
 CREATE TABLE [dbo].[report_ClinkerEnergyConsumption_TargetCompletion](			-- ÄÜºÄÖ¸±êÍê³ÉÇé¿ö
@@ -475,7 +474,7 @@ CREATE TABLE [dbo].[report_ClinkerEnergyConsumption_TargetCompletion](			-- ÄÜºÄ
     [Monthly_Gap] [bigint] NULL,												-- ±¾ÔÂ²î¾à
 	[Yearly_Target] [bigint] NULL,												-- ±¾ÄêÖ¸±ê
 	[Yearly_Accumulative] [bigint] NULL,										-- ±¾ÄêÀÛ¼Æ
-    [Yearly_Gap] [bigint] NULL,													-- ±¾Äê²î¾à
+    [Yearly_Gap] [bigint] NULL													-- ±¾Äê²î¾à
 )
 GO
 
@@ -546,7 +545,7 @@ CREATE TABLE [dbo].[report_ClinkerMonthlyProcessEnergyConsumption](				--ÊìÁÏÉú²
 	[Amountto_ElectricityConsumption_Clinker]  [decimal](8, 2) NULL,     		-- ÈÕºÏ¼Æ-µçºÄ-ÊìÁÏÉÕ³É
 	[Amountto_ElectricityConsumption_CoalDust]  [decimal](8, 2) NULL,    		-- ÈÕºÏ¼Æ-µçºÄ-Ãº·ÛÖÆ±¸
 	[Amountto_ComprehensiveElectricityConsumption]  [decimal](8, 2) NULL,		-- ÈÕºÏ¼Æ-×ÛºÏµçºÄ
-	[Amountto_ComprehensiveCoalConsumption]  [decimal](8, 2) NULL,       		-- ÈÕºÏ¼Æ-ÊµÎïÃººÄ
+	[Amountto_ComprehensiveCoalConsumption]  [decimal](8, 2) NULL       		-- ÈÕºÏ¼Æ-ÊµÎïÃººÄ
 ) 
 GO
 
@@ -583,8 +582,7 @@ CREATE TABLE [dbo].[report_ClinkerYearlyProcessEnergyConsumption](				-- ÊìÁÏÉú²
 	[ComprehensiveElectricityConsumption_Monthly] [decimal](8, 2) NULL,     	-- ×ÛºÏµçºÄ_±¾ÔÂ
 	[ComprehensiveElectricityConsumption_Accumulative] [decimal](8, 2) NULL,	-- ×ÛºÏµçºÄ_ÀÛ¼Æ
 	[ComprehensiveCoalConsumption_Monthly] [decimal](8, 2) NULL,            	-- ÊµÎïÃººÄ_±¾ÔÂ
-	[ComprehensiveCoalConsumption_Accumulative] [decimal](8, 2) NULL,       	-- ÊµÎïÃººÄ_ÀÛ¼Æ
-
+	[ComprehensiveCoalConsumption_Accumulative] [decimal](8, 2) NULL	       	-- ÊµÎïÃººÄ_ÀÛ¼Æ
 ) 
 GO
 
@@ -636,7 +634,7 @@ CREATE TABLE [dbo].[report_CementMilMonthlyEnergyConsumption](					-- Ë®ÄàÄ¥ÄÜºÄ
 	[Amountto_ElectricityConsumption_Cement] [decimal](8, 2) NULL,				-- µçºÄ-Ë®ÄàÖÆ±¸
 	[Amountto_ElectricityConsumption_CementGrinding] [decimal](8, 2) NULL,		-- µçºÄ-Ë®ÄàÄ¥
 	[Amountto_ElectricityConsumption_BagsBulk] [decimal](8, 2) NULL,			-- µçºÄ-´ü×°ÓëÉ¢×°
-	[Amountto_ComprehensiveElectricityConsumption] [decimal](8, 2) NULL, 		-- ×ÛºÏµçºÄ
+	[Amountto_ComprehensiveElectricityConsumption] [decimal](8, 2) NULL 		-- ×ÛºÏµçºÄ
 )
 GO
 
@@ -698,7 +696,7 @@ CREATE TABLE [dbo].[report_TeamCementMonthlyEnergyConsumption](					--°à×éË®Äà·Û
 	[Amountto_ElectricityConsumption_Cement] [decimal](8, 2) NULL,				-- µçºÄ-Ë®ÄàÖÆ±¸
 	[Amountto_ElectricityConsumption_CementGrinding] [decimal](8, 2) NULL,		-- µçºÄ-Ë®ÄàÄ¥
 	[Amountto_ElectricityConsumption_BagsBulk] [decimal](8, 2) NULL,			-- µçºÄ-´ü×°ÓëÉ¢×°
-	[Amountto_ComprehensiveElectricityConsumption] [decimal](8, 2) NULL, 		-- ×ÛºÏµçºÄ
+	[Amountto_ComprehensiveElectricityConsumption] [decimal](8, 2) NULL 		-- ×ÛºÏµçºÄ
 	
 ) 
 GO
@@ -761,7 +759,7 @@ CREATE TABLE [dbo].[report_TeamCementYearlyEnergyConsumption](					--°à×éË®Äà·ÛÄ
 	[Amountto_ElectricityConsumption_Cement] [decimal](8, 2) NULL,				-- µçºÄ-Ë®ÄàÖÆ±¸
 	[Amountto_ElectricityConsumption_CementGrinding] [decimal](8, 2) NULL,		-- µçºÄ-Ë®ÄàÄ¥
 	[Amountto_ElectricityConsumption_BagsBulk] [decimal](8, 2) NULL,			-- µçºÄ-´ü×°ÓëÉ¢×°
-	[Amountto_ComprehensiveElectricityConsumption] [decimal](8, 2) NULL, 		-- ×ÛºÏµçºÄ
+	[Amountto_ComprehensiveElectricityConsumption] [decimal](8, 2) NULL 		-- ×ÛºÏµçºÄ
 	
 ) 
 GO
@@ -789,7 +787,7 @@ CREATE TABLE [dbo].[report_CementMilYearlyEnergyConsumption](					-- Ë®ÄàÄ¥ÄÜºÄÄ
 	[ElectricityConsumption_BagsBulk_Monthly] [decimal](8, 2) NULL,				-- µçºÄ-´ü×°ÓëÉ¢×°_±¾ÔÂ
 	[ElectricityConsumption_BagsBulk_Accumulative] [decimal](8, 2) NULL,		-- µçºÄ-´ü×°ÓëÉ¢×°_ÀÛ¼Æ
 	[ComprehensiveElectricityConsumption_Monthly] [decimal](8, 2) NULL, 		-- ×ÛºÏµçºÄ_±¾ÔÂ
-	[ComprehensiveElectricityConsumption_Accumulative] [decimal](8, 2) NULL, 	-- ×ÛºÏµçºÄ_ÀÛ¼Æ
+	[ComprehensiveElectricityConsumption_Accumulative] [decimal](8, 2) NULL 	-- ×ÛºÏµçºÄ_ÀÛ¼Æ
 )
 GO
 
@@ -876,7 +874,7 @@ CREATE TABLE [dbo].[report_TeamClinkerMonthlyProcessEnergyConsumption](			--°à×é
 	[Amountto_ElectricityConsumption_Clinker]  [decimal](18, 4) NULL,     		-- ÈÕºÏ¼Æ-µçºÄ-ÊìÁÏÉÕ³É
 	[Amountto_ElectricityConsumption_CoalDust]  [decimal](18, 4) NULL,    		-- ÈÕºÏ¼Æ-µçºÄ-Ãº·ÛÖÆ±¸
 	[Amountto_ComprehensiveElectricityConsumption]  [decimal](18, 4) NULL,		-- ÈÕºÏ¼Æ-×ÛºÏµçºÄ
-	[Amountto_ComprehensiveCoalConsumption]  [decimal](18, 4) NULL,       		-- ÈÕºÏ¼Æ-ÊµÎïÃººÄ
+	[Amountto_ComprehensiveCoalConsumption]  [decimal](18, 4) NULL       		-- ÈÕºÏ¼Æ-ÊµÎïÃººÄ
 ) 
 GO
 
@@ -963,6 +961,6 @@ CREATE TABLE [dbo].[report_TeamClinkerYearlyProcessEnergyConsumption](			-- °à×é
 	[Amountto_ElectricityConsumption_Clinker]  [decimal](8, 2) NULL,     		-- ÈÕºÏ¼Æ-µçºÄ-ÊìÁÏÉÕ³É
 	[Amountto_ElectricityConsumption_CoalDust]  [decimal](8, 2) NULL,    		-- ÈÕºÏ¼Æ-µçºÄ-Ãº·ÛÖÆ±¸
 	[Amountto_ComprehensiveElectricityConsumption]  [decimal](8, 2) NULL,		-- ÈÕºÏ¼Æ-×ÛºÏµçºÄ
-	[Amountto_ComprehensiveCoalConsumption]  [decimal](8, 2) NULL,       		-- ÈÕºÏ¼Æ-ÊµÎïÃººÄ
+	[Amountto_ComprehensiveCoalConsumption]  [decimal](8, 2) NULL       		-- ÈÕºÏ¼Æ-ÊµÎïÃººÄ
 ) 
 GO
