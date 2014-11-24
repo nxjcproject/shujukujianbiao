@@ -317,7 +317,20 @@ CREATE TABLE [dbo].[table_ClinkerMonthlyElectricity_sum](						-- 熟料生产�
 	[AmounttoFirstShift]  [decimal](18, 4) default(0) NULL,                     -- 总合计甲班
 	[AmounttoSecondShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoThirdShift]  [decimal](18, 4) default(0) NULL,
-	[AmounttoSum]  [decimal](18, 4) default(0) NULL
+	[AmounttoSum]  [decimal](18, 4) default(0) NULL,
+	-- 以下列为程东元添加	
+	[RawBatchHomogenizeFirstShift] [decimal](18, 4) default(0) NULL,             --生料均化甲班用电量
+	[RawBatchHomogenizeSecondShift] [decimal](18, 4) default(0) NULL,                     
+	[RawBatchHomogenizeThirdShift] [decimal](18, 4) default(0) NULL,                      
+	[RawBatchHomogenizeSum] [decimal](18, 4) default(0) NULL,                       
+	[KilnSystemFirstShift]  [decimal](18, 4) default(0) NULL,                    --窑系统甲班用电量
+	[KilnSystemSecondShift]  [decimal](18, 4) default(0) NULL,                             
+	[KilnSystemThirdShift]  [decimal](18, 4) default(0) NULL,                              
+	[KilnSystemSum]  [decimal](18, 4) default(0) NULL,                              
+	[ExhaustDisposeFirstShift]  [decimal](18, 4) default(0) NULL,                --废气处理甲班用电量
+	[ExhaustDisposeSecondShift]  [decimal](18, 4) default(0),           
+	[ExhaustDisposeThirdShift]  [decimal](18, 4) default(0),
+	[ExhaustDisposeSum]  [decimal](18, 4) default(0) NULL         
 ) 
 GO
 
@@ -456,7 +469,20 @@ CREATE TABLE [dbo].[table_ClinkerYearlyElectricity_sum](						-- 熟料生产线
 	[AmounttoFirstShift]  [decimal](18, 4) default(0) NULL,                     -- 总合计甲班
 	[AmounttoSecondShift]  [decimal](18, 4) default(0) NULL,
 	[AmounttoThirdShift]  [decimal](18, 4) default(0) NULL,
-	[AmounttoSum]  [decimal](18, 4) default(0) NULL
+	[AmounttoSum]  [decimal](18, 4) default(0) NULL,
+	-- 以下列为程东元添加	
+	[RawBatchHomogenizeFirstShift] [decimal](18, 4) default(0) NULL,             --生料均化甲班用电量
+	[RawBatchHomogenizeSecondShift] [decimal](18, 4) default(0) NULL,                     
+	[RawBatchHomogenizeThirdShift] [decimal](18, 4) default(0) NULL,                      
+	[RawBatchHomogenizeSum] [decimal](18, 4) default(0) NULL,                       
+	[KilnSystemFirstShift]  [decimal](18, 4) default(0) NULL,                    --窑系统甲班用电量
+	[KilnSystemSecondShift]  [decimal](18, 4) default(0) NULL,                             
+	[KilnSystemThirdShift]  [decimal](18, 4) default(0) NULL,                              
+	[KilnSystemSum]  [decimal](18, 4) default(0) NULL,                              
+	[ExhaustDisposeFirstShift]  [decimal](18, 4) default(0) NULL,                --废气处理甲班用电量
+	[ExhaustDisposeSecondShift]  [decimal](18, 4) default(0),           
+	[ExhaustDisposeThirdShift]  [decimal](18, 4) default(0),
+	[ExhaustDisposeSum]  [decimal](18, 4) default(0) NULL         
 ) 
 GO
 CREATE TABLE [dbo].[table_CementMillMonthlyElectricity_sum](					-- 水泥生产线合计用电量统计月报表
