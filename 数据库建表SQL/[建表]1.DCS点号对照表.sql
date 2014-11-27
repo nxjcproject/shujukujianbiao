@@ -26,6 +26,7 @@ GO
 CREATE TABLE [dbo].[EnergyConsumptionContrast](									-- 能耗监控画面对照表
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,                          -- 主键ID
 	[OrganizationID] [varchar](64) NULL,				                    	-- 生产机构ID
+	[type] [int] NULL,															-- 变量类型
 	[ViewName] [char](30) NULL,													-- 画面名称
 	[VariableName] [char](30) NULL,												-- 变量名称（变量名称命名不可以数字开头，是为开发其他系统通用性考虑，以及在前台配置标签时ID的命名约束）
 	[VariableDescription] [varchar](max) NULL,									-- 变量描述
