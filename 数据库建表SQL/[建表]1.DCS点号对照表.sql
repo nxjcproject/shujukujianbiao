@@ -30,6 +30,8 @@ CREATE TABLE [dbo].[EnergyConsumptionContrast](									-- 能耗监控画面对照表
 	[ViewName] [char](30) NULL,													-- 画面名称
 	[VariableName] [char](30) NULL,												-- 变量名称（变量名称命名不可以数字开头，是为开发其他系统通用性考虑，以及在前台配置标签时ID的命名约束）
 	[VariableDescription] [varchar](max) NULL,									-- 变量描述
+	[TableName] [char](30) NULL,												-- 数据存储表名称（此处仅填写表名，系统自动生成History/Realtime前缀）
+	[FieldName] [char](30) NULL,												-- 数据存储字段名称
 	[Item] [char](30) NULL,														-- 标签/电表编号/公式
 	[value] [decimal](18, 2) NULL,												-- 值
 )
