@@ -36,6 +36,7 @@ CREATE TABLE [dbo].[system_WorkingSection](										-- 工段信息
 	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
 	[CreatedDate] [Datetime] NULL,												-- 创建日期
 	[Name] [nvarchar](50) NULL,													-- 工段名称
+	[Enabled] [bit] DEFAULT(1) NOT NULL,										-- 启用
 	[Remarks] [nvarchar](100) NULL,												-- 备注
 )
 
