@@ -19,13 +19,14 @@ GO
 
 CREATE TABLE [dbo].[shift_OperatorsLog](										-- 操作员记录
 	[WorkingTeamShiftLogID] [uniqueidentifier] NULL,							-- 所属交接班记录ID
+	[OrganizationID] [varchar](64) NULL,										-- DCS系统组织机构ID
 	[WorkingSectionName] [nvarchar](50) NULL,									-- 工段名称
 	[StaffID] [nvarchar](50) NULL												-- 操作员ID
 )
 GO
 
 CREATE TABLE [dbo].[system_MachineHaltReason](									-- 停机原因
-	[MachineHaltReasonID] [char](8) NOT NULL,									-- 停机原因ID（层次码，E开头，2位一层，如E0101）
+	[MachineHaltReasonID] [varchar](20) NOT NULL,								-- 停机原因ID（层次码，E开头，2位一层，如E0101）
 	[ReasonText] [nvarchar](100) NULL,											-- 停机原因描述
 	[Remarks] [nvarchar](100) NULL												-- 备注
 )
@@ -67,7 +68,8 @@ CREATE TABLE [dbo].[shift_DCSWarningLog](										-- DCS报警记录
 	[StartingTime] [datetime] NULL,												-- 起始时间
 	[EndingTime] [datetime] NULL,												-- 结束时间
 	[Message] [nvarchar](50) NULL,												-- 报警信息
-	[HandleInformation] [nvarchar](200) NULL									-- 处理情况
+	[HandleInformation] [nvarchar](200) NULL,									-- 处理情况
+	[Remarks] [nvarchar](100) NULL												-- 备注
 )
 GO
 
