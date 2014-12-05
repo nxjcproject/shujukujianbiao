@@ -41,6 +41,21 @@ CREATE TABLE [dbo].[system_Organization_Instrumentation](
 )
 GO
 
+CREATE TABLE [dbo].[tz_Plan](
+	[KeyID] [uniqueidentifier] PRIMARY KEY NOT NULL,
+	[OrganizationID] [varchar](64) NOT NULL,
+	[Date] [char](10) NOT NULL,
+	[ProductionLineType] [varchar](32) NOT NULL,
+	[TableName] [char](100) NULL,
+	[CreationDate] [datetime] NULL,
+	[Version] [datetime] NULL,
+	[ModifierID] [int] NULL,
+	[Statue] [int] NULL,
+	[Remarks] [nvarchar](max) NULL
+)
+GO
+
+
 CREATE TABLE [dbo].[plan_EnergyConsumptionPlan_Template](
 	[QuotasID] [varchar](64) PRIMARY KEY NOT NULL,
 	[QuotasName] [varchar](64) NOT NULL,
@@ -50,10 +65,12 @@ CREATE TABLE [dbo].[plan_EnergyConsumptionPlan_Template](
 GO
 
 CREATE TABLE [dbo].[plan_EnergyConsumptionYearlyPlan](
-	[QuotasItemID] [uniqueidentifier] DEFAULT (newid()) NULL,
+	[QuotasItemID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,
 	[QuotasID] [varchar](64) NOT NULL,
-	[OrganizationID] [varchar](64) NOT NULL,
-	[PlanYear] [int] NOT NULL,
+	[QuotasName] [varchar](64) NULL,
+	[DisplayIndex] [int] DEFAULT ((1)) NOT NULL,
+	[KeyID] [uniqueidentifier] NULL,
+	[ProductionLineType] [varchar](32) NULL,
 	[January] [varchar](64) NULL,
 	[February] [varchar](64) NULL,
 	[March] [varchar](64) NULL,
