@@ -123,8 +123,8 @@ CREATE TABLE [dbo].[system_ShiftDescription](									-- 班次描述表
 	[ShiftDescriptionID] [uniqueidentifier] DEFAULT(newid()) NULL,				-- 班次描述表ID
 	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
 	[Shifts] [nchar](2) NULL,													-- 班次（1：甲班，2：乙班，3：丙班）
-	[StartTime] [time](7) NULL,													-- 起始时间
-	[EndTime] [time](7) NULL,													-- 终止时间
+	[StartTime] [char](10) NULL,												-- 起始时间
+	[EndTime] [char](10) NULL,													-- 终止时间
 	[Description] [nvarchar](10) NULL,											-- 描述（中文）
 	[CreatedDate] [datetime] NULL												-- 创建时间
 )
