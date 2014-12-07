@@ -65,7 +65,7 @@ CREATE TABLE [dbo].[plan_EnergyConsumptionPlan_Template](
 GO
 
 CREATE TABLE [dbo].[plan_EnergyConsumptionYearlyPlan](
-	[QuotasItemID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,
+	[QuotasItemID] [uniqueidentifier] DEFAULT(newid()) NULL,
 	[QuotasID] [varchar](64) NOT NULL,
 	[QuotasName] [varchar](64) NULL,
 	[DisplayIndex] [int] DEFAULT ((1)) NOT NULL,
