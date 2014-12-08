@@ -88,6 +88,7 @@ CREATE TABLE [dbo].[system_PVF_Detail](											-- 峰谷平定义表
 	[Type][char](10) NULL                                 						-- 类型 （峰期 ；谷期 ；平期）
 )
 GO
+
 CREATE TABLE [dbo].[system_PVF](												-- 峰谷列表
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
     [OrganizationID] [varchar](64) NULL,                                		-- 生产机构ID
@@ -95,5 +96,30 @@ CREATE TABLE [dbo].[system_PVF](												-- 峰谷列表
 	[EndUsing] [date] NULL,                              						-- 停用时间
 	[Flag] [bit] NULL,                                       					-- 启用标志
 	[KeyID] [uniqueidentifier] NULL												-- 引领ID
+)
+GO
+
+	
+CREATE TABLE [dbo].[system_MasterMachinedescription](							-- DCS主机描述
+    [ID] [uniqueidentifier] PRIMARY KEY DEFAULT(newid()) NOT NULL,              -- 主键ID
+	[OrganizationID] [varchar](64) NULL,				                    	-- 生产机构ID
+	[VariableName] [char](30) NULL,												-- 变量名称（变量名称命名不可以数字开头，是为开发其他系统通用性考虑，以及在前台配置标签时ID的命名约束）
+	[VariableDescription] [varchar](max) NULL,									-- 变量描述
+	[Record] [bit] NULL,                                                        -- 是否记录主机停机信息
+	[ValidValues] [bit] NULL,													-- 有效值（比如点号采集值为0时标识主机停机，则此处填写0）
+	[Remarks] [nvarchar](max) NULL,							                    -- 备注
+	[KeyID] [uniqueidentifier] NULL							                    -- 连从机表的Key_id
+)
+GO
+
+CREATE TABLE [dbo].[system_SlaveMachinedescription](							-- DCS从机描述
+    [ID] [uniqueidentifier] PRIMARY KEY DEFAULT(newid()) NOT NULL,              -- 主键ID
+	[OrganizationID] [varchar](64) NULL,				                    	-- 生产机构ID
+	[KeyID] [uniqueidentifier] NULL,						                    -- 主机Key_id
+	[VariableName] [char](30) NULL,												-- 变量名称（变量名称命名不可以数字开头，是为开发其他系统通用性考虑，以及在前台配置标签时ID的命名约束）
+	[VariableDescription] [varchar](max) NULL,									-- 变量描述
+	[ValidValues] [bit] NULL,													-- 有效值（比如点号采集值为0时标识主机停机，则此处填写0）
+    [TimeDelay] [int] DEFAULT(5) NOT NULL,										-- 允许时间
+	[Remarks] [nvarchar](max) NULL							                    -- 备注
 )
 GO
