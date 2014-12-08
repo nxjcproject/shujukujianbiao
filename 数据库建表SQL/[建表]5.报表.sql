@@ -4,7 +4,7 @@
 */
 
 CREATE TABLE [dbo].[tz_Report](							    					-- 报表引领表
-	[OrganizationID] [uniqueidentifier] NULL,									-- 生产机构ID
+	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
 	[ReportID] [uniqueidentifier] NULL,											-- 报表名称ID
 	[ReportName] [nvarchar](max) NULL,											-- 报表名称	
 	[Date] [char](10) NULL,														-- 报表日期（报表类型由此字段确定，所以年报仅填写2000，月报填写2000-01，日报填写2000-01-01）
