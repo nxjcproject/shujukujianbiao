@@ -9,7 +9,7 @@ CREATE TABLE [dbo].[system_Organization](										-- 组织机构结构表
 	[Name] [nvarchar](50) NULL,													-- 生产机构名称
 	[Type] [nvarchar](50) NULL,													-- 生产线类型
 	[Altitude] [int] NULL,														-- 生产线海拔高度
-	[RawToClinkerCoff] [double][decimal](18, 4) NULL,							-- 生/熟料这算系数
+	[RawToClinkerCoff] [decimal](18, 4) NULL,									-- 生/熟料这算系数
 	[ENABLED] [bit] NULL,														-- 是否有效
 	[LegalRepresentative] [nvarchar](30) NULL,									-- 法人代表
 	[Address] [nvarchar](max) NULL,												-- 生产机构地址
