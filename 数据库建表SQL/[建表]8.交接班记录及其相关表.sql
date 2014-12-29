@@ -106,15 +106,13 @@ CREATE TABLE [dbo].[shift_EnergyConsumptionAlarmLog](							-- 能耗报警记�
 	[EnergyConsumptionAlarmLogID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,	-- 能耗报警记录ID
 	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
 	[WorkingTeamShiftLogID] [uniqueidentifier] NULL,							-- 所属交接班记录ID	
-	[AlarmTime] [datetime] NULL,												-- 报警时间
-	[AlarmType] [nchar](4) NULL, 												-- 报警类别（1：电耗超标，2：功率超标，2：煤耗超标）
-	[StartingTime] [datetime] NULL,												-- 超标起始时间
-	[EndingTime] [datetime] NULL,												-- 超标结束时间
-	[FormulaDetailID] [uniqueidentifier] NULL,									-- FormulaDetailID	------------------------------
-	[ParameterName] [nvarchar](20) NULL,										-- 参数名称        -------------------------
-	[StandardValue] [real] NULL,												-- 标准值
-	[ActualValue] [real] NULL,													-- 实际值
-	[Superscale] [real] NULL,													-- 超调量
+	[EnergyConsumptionType] [nchar](4) NULL,									-- 报警类别（1：电耗超标，2：功率超标，2：煤耗超标）
+	[StartTime] [datetime] NULL,												-- 超标起始时间
+	[TimeSpan] [nvarchar](100) NULL,											-- 超标结束时间
+	[Name] [nvarchar](20) NULL,													-- 参数名称
+	[StandardValue] [decimal](18, 4) NULL,										-- 标准值
+	[ActualValue] [decimal](18, 4) NULL,										-- 实际值
+	[Superscale] [decimal](18, 4) NULL,											-- 超调量
 	[Reason] [nvarchar](200) NULL												-- 报警原因
 )
 GO
