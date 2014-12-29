@@ -18,15 +18,16 @@ CREATE TABLE [dbo].[tz_Report](							    					-- 报表引领表
 )
 GO
 
-CREATE TABLE [dbo].[report_ClinkerYeldPerUnitDistributionEnergyConsumptionYearly](
+CREATE TABLE [dbo].[report_ClinkerYearlyPerUnitDistributionEnergyConsumption](
 																				-- 熟料单位产品能耗年报表
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,        					-- 主键ID
 	[KeyID] [uniqueidentifier] NULL,                          					-- 报表引领表ID
-	[vDate] [nchar](2) NULL,                                  					-- 月份
+	[Type] [int] NULL,                                  						-- 分月/累计：1--分月；2--累计	
+	[vDate] [char](10) NULL,                                  					-- 年-月份，如：2014-01
 	[ElectricityConsumption] [bigint] NULL,                   					-- 熟料用电量
 	[CoalDust] [bigint] NULL,                                 					-- 入窑煤粉量
 	[Qnet] [bigint] NULL,                                     					-- 煤粉空干基低位发热量
-	[Diesel] [bigint] NULL,                                   					-- 点火用油
+	[Diesel] [decimal](8, 2) NULL,                                   			-- 点火用油
 	[CogenerationSupply] [bigint] NULL,                       					-- 余热发电上网电量
 	[CogenerationProduction] [bigint] NULL,                   					-- 余热发电发电量
 	[CogenerationSelfUse] [bigint] NULL,                      					-- 余热发电自用电电量
@@ -35,24 +36,35 @@ CREATE TABLE [dbo].[report_ClinkerYeldPerUnitDistributionEnergyConsumptionYearly
 	[ClinkerIntensityCorrectionFactor][decimal](8, 4) NULL,                    	-- 熟料强度修正系数
 	[Clinker_ComprehensiveElectricityConsumption] [decimal](8, 1) NULL,        	-- 熟料综合电耗
 	[Clinker_ComparableComprehensiveElectricityConsumption][decimal](8, 1) NULL,-- 可比熟料综合电耗
+	[Clinker_CoalDustConsumption][decimal](8, 1) NULL,            				-- 熟料煤耗
 	[Clinker_ComprehensiveCoalDustConsumption][decimal](8, 1) NULL,            	-- 熟料综合煤耗
-    [Clinker_ComparableComprehensiveCoalDustConsumption][decimal](8, 1) NULL,  	-- 可比熟料综合煤耗
-	[Clinker_DieselConsumption] [decimal](8, 1) NULL,                          	-- 熟料油耗
+	[Clinker_ComparableComprehensiveCoalDustConsumption][decimal](8, 1) NULL,  	-- 可比熟料综合煤耗
+	[Clinker_DieselConsumption] [decimal](8, 3) NULL,                          	-- 熟料油耗
 	[CogenerationSupplyCorrection][decimal](8, 1) NULL,                        	-- 余热发电上网电量折合标准值
 	[Clinker_ComprehensiveEnergyConsumption] [decimal](8, 1) NULL,             	-- 熟料综合能耗
 	[Clinker_ComparableComprehensiveEnergyConsumption] [decimal](8, 1) NULL   	-- 可比熟料综合能耗
 ) 
 GO
 
-CREATE TABLE [dbo].[report_CementYeldPerUnitDistributionPowerConsumptionYearly](-- 水泥单位产品能耗年报表
+CREATE TABLE [dbo].[report_CementYearlyPerUnitDistributionPowerConsumption](	-- 水泥单位产品可比能耗年报表
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
 	[KeyID] [uniqueidentifier] NULL,                        					-- 报表引领表ID
-	[vDate] [nchar](2) NULL,                                    				-- 月份
-	[CementTypes] [char](30) NULL,                          					-- 水泥品种
-	[Output] [bigint] NULL,                                 					-- 水泥产量
+	[Type] [int] NULL,                                  						-- 分月/累计：1--分月；2--累计	
+	[vDate] [char](10) NULL,                 									-- 年-月份，如：2014-01
 	[ElectricityConsumption] [bigint] NULL,                 					-- 用电量
-	[DistributionPowerConsumption] [decimal](8, 2) NULL,   						-- 分步电耗
-	[ConversionDistributionPowerConsumption] [decimal](8, 2) NULL			 	-- 折算P.O42.5分布电耗
+	[Clinker_ComprehensiveElectricityConsumption] [decimal](8, 1) NULL,        	-- 熟料综合电耗
+	[Clinker_ComparableComprehensiveCoalDustConsumption][decimal](8, 1) NULL,  	-- 可比熟料综合煤耗
+	[CementProductionSum] [bigint] NULL,                                 		-- 水泥产量
+	[ClinkerConsumptionSum] [bigint] NULL,                                      -- 熟料消耗量
+	[ClinkerMatching]  [decimal](8,2) NULL,                     				-- 熟料平均配比
+	[CementIntensity] [decimal](8,1) NULL,                                   	-- 各品种水泥平均强度
+	[CementIntensityCorrectionFactor][decimal](8, 4) NULL,                    	-- 水泥强度修正系数
+	[DistributionPowerConsumption] [decimal](8, 1) NULL,   						-- 分步电耗
+	[Cement_ComprehensiveElectricityConsumption] [decimal](8, 1) NULL,        	-- 水泥综合电耗
+	[Cement_ComparableComprehensiveElectricityConsumption][decimal](8, 1) NULL,	-- 可比水泥综合电耗
+	[Cement_ComparableComprehensiveCoalDustConsumption][decimal](8, 1) NULL,  	-- 可比水泥综合煤耗
+	[Cement_ComparableComprehensiveEnergyConsumption] [decimal](8, 1) NULL   	-- 可比水泥综合能耗
+
 ) 
 GO
 

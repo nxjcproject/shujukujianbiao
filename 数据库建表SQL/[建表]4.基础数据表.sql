@@ -58,7 +58,8 @@ CREATE TABLE [dbo].[system_CementTypesAndConvertCoefficient](					-- Ë®ÄàÆ·ÖÖ¼°Õ
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- Ö÷¼üID
 	[CementID] [int] NULL,                                  					-- Ë®ÄàÆ·ÖÖID
 	[CementTypes] [char](30) NULL,                          					-- Ë®ÄàÆ·ÖÖ
-	[ConvertCoefficient]  [decimal](6, 4) NULL,             					-- ÕÛºÏÏµÊı
+	[ConvertCoefficient] [decimal](6, 4) DEFAULT(1) NOT NULL,             		-- ÕÛºÏÏµÊı
+	[Intensity] [decimal](8, 1) DEFAULT(1) NOT NULL,							-- Ë®ÄàÇ¿¶È
     [Remarks] [nvarchar](max) NULL												-- ±¸×¢
 )
 GO

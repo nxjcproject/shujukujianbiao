@@ -14,6 +14,7 @@ CREATE TABLE [dbo].[DCSContrast](												-- DCS点号对照表
 	[TableName] [char](30) NULL,												-- 数据存储表名称（此处仅填写表名，系统自动生成History/Realtime前缀）
 	[FieldName] [char](30) NULL,												-- 数据存储字段名称
 	[DataType] [char](30) NULL,													-- 数据存储类型（注意精度的设计）
+	[DataTypeStandard] [char](30) NULL,											-- 数据类型标准（real  int  bit  string）(DataType 保存的是数据库字段中的类型，DataTypeStandard 保存的是数据的种类，注意区别)
 	[ViewName] [char](30) NULL,													-- 画面名称
 	[IsCumulant] [bit] NULL,													-- 是否是累计量（李相松，去掉Total，改为IsCumulant）
 	[CumulantName] [char](4) NULL,												-- 累积量名称（S501，注意以5开头，区别电表累积量，电表累积量以S001开始命名）

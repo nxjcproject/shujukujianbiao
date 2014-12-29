@@ -8,7 +8,7 @@ CREATE TABLE [dbo].[system_Organization](										-- 组织机构结构表
 	[DatabaseID] [uniqueidentifier] NULL,										-- 数据库ID
 	[Name] [nvarchar](50) NULL,													-- 生产机构名称
 	[Type] [nvarchar](50) NULL,													-- 生产线类型
-	[Altitude] [int] NULL,														-- 生产线海拔高度
+	[CoefficientAltitude] [int] DEFAULT(1) NULL,								-- 海拔高度修正系数
 	[RawToClinkerCoff] [decimal](18, 4) NULL,									-- 生/熟料这算系数
 	[ENABLED] [bit] NULL,														-- 是否有效
 	[LegalRepresentative] [nvarchar](30) NULL,									-- 法人代表

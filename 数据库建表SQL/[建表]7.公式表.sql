@@ -9,15 +9,17 @@ CREATE TABLE [dbo].[tz_Formula](												-- 公式引领表
 	[CreatedDate] [datetime] NULL,												-- 公式组创建日期
 	[AlarmPeriod] [int] DEFAULT(0) NULL,										-- 报警周期（分钟）
 	[Type] [int] DEFAULT(0) NULL,												-- 公式类型（1：公共，2：系统，3：自定义）
+	[ENABLE] [bit] DEFAULT(1) NULL,												-- 启用标志
 	[State] [int] DEFAULT(0) NULL												-- 公式组状态
 )
 GO
 
 CREATE TABLE [dbo].[formula_FormulaDetail](										-- 公式表（包括公共、系统、自定义）
-	[ID] [uniqueidentifier] DEFAULT(newid()) NULL,								-- 唯一ID               -----------------------------
+	[ID] [uniqueidentifier] DEFAULT(newid()) NULL,								-- 唯一ID（用于数据同步）
+	[VariableID] [varchar](64) NULL,											-- 公式ID（用于KPI平衡以及预留的ERP接口）
 	[KeyID] [uniqueidentifier] NULL,											-- 公式引领ID
 	[LevelCode] [nvarchar](50) NOT NULL,										-- 层次码
-	[ProcessName] [nvarchar](50) NULL,											-- 工序名称           ----------------------------
+	[ProcessName] [nvarchar](50) NULL,											-- 工序名称
 	[Formula] [nvarchar](400) NULL,												-- 公式
 	[Denominator] [nvarchar](MAX) NULL,											-- 电耗(分母公式)
 	[Required] [bit] DEFAULT(0) NULL,											-- 必选
@@ -38,8 +40,8 @@ CREATE TABLE [dbo].[formula_ConsumptionAlarmSetting](							-- 能耗报警设置
 GO
 
 CREATE TABLE [dbo].[formula_Log](
-	[KeyID] [uniqueidentifier] NOT NULL,
-	[EffectiveDate] [datetime] NULL,
-	[ExpirationDate] [datetime] NULL
+	[KeyID] [uniqueidentifier] NOT NULL,										-- 公式组ID
+	[EffectiveDate] [datetime] NULL,											-- 启用时间
+	[ExpirationDate] [datetime] NULL											-- 停用时间
 )
 GO
