@@ -16,7 +16,7 @@ GO
 
 CREATE TABLE [dbo].[formula_FormulaDetail](										-- 公式表（包括公共、系统、自定义）
 	[ID] [uniqueidentifier] DEFAULT(newid()) NULL,								-- 唯一ID（用于数据同步）
-	[VariableID] [varchar](64) NULL,											-- 公式ID（用于KPI平衡以及预留的ERP接口）
+	[VariableId] [varchar](64) NULL,											-- 公式ID（用于KPI平衡以及预留的ERP接口）
 	[KeyID] [uniqueidentifier] NULL,											-- 公式引领ID
 	[LevelCode] [nvarchar](50) NOT NULL,										-- 层次码
 	[ProcessName] [nvarchar](50) NULL,											-- 工序名称
@@ -27,6 +27,7 @@ CREATE TABLE [dbo].[formula_FormulaDetail](										-- 公式表（包括公共、系统、
 	[EnergyAlarmValue] [decimal](8, 2) NULL,									-- 电耗报警值
 	[PowerAlarmValue] [decimal](8, 2) NULL,										-- 功率报警值
 	[RelativeParameters] [nvarchar](MAX) NULL,									-- 相关参数（DCS:标签名[,DCS:标签名]）
+	[AlarmStatus] [bit] DEFAULT(0) NOT NULL,									-- 报警状态（无论是什么报警，都将此位置1，此字段为能耗监控画面的实时报警服务）
 	[Remarks] [nvarchar](MAX) NULL												-- 备注
 )
 GO

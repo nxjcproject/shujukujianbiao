@@ -10,6 +10,8 @@ CREATE TABLE [dbo].[system_ReportDescription](									-- 报表名称描述
 )
 GO
 
+-- 这两个表已弃用。（新的设计见模块设计（二）中的 生产线能耗报警参数设置）
+/*
 CREATE TABLE [dbo].[system_ElectricityConsumptionAlarmParameterSetting](		-- 电耗报警参数设置
     [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
 	[OrganizationID] [varchar](64) NULL,										-- 生产机构ID
@@ -30,6 +32,7 @@ CREATE TABLE [dbo].[system_CoalConsumptionAlarmParameterSetting](  				-- 煤耗报
     [Remarks] [nvarchar](max) NULL												-- 备注
 )
 GO
+*/
 
 --CREATE TABLE [dbo].[system_AlarmCycle](                     					-- 能耗报警报警周期设置
 --    [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL,      					-- 主键ID
