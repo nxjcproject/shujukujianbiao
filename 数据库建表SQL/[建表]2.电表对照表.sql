@@ -28,3 +28,30 @@ CREATE TABLE [dbo].[AmmeterContrast](											-- 电表对照表
 	[CumulantName] [char](4) NULL,												-- 累积量名称（S001，注意以0开头，区别DCS累积量，DCS累积量以S501开始命名）
 )
 GO
+
+CREATE TABLE [dbo].[RealtimeFormulaValue](										-- 实时公式计算值存储表
+	[vDate] [datetime] NULL,													-- 时间
+	[OrganizationID] [varchar](64) NOT NULL,									-- 组织机构ID
+	[VariableID] [varchar](64) NULL,											-- 公式变量ID
+	[LevelCode] [nvarchar](50) NOT NULL,										-- 公式层次码
+	[FormulaValue] [decimal](18, 4) NULL,										-- 公式计算电量值
+	[DenominatorValue] [decimal](18, 4) NULL									-- 分母计算值
+
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[HistoyFormulaValue](										-- 历史公式计算值存储表
+	[vDate] [datetime] NOT NULL,
+	[OrganizationID] [varchar](64) NOT NULL,
+	[VariableID] [varchar](64) NULL,
+	[LevelCode] [nvarchar](50) NOT NULL,
+	[FormulaValue] [decimal](18, 4) NULL,
+	[DenominatorValue] [decimal](18, 4) NULL,
+ CONSTRAINT [PK_HistoyFormulaValue] PRIMARY KEY CLUSTERED 
+(
+	[OrganizationID] ASC,
+	[LevelCode] ASC,
+	[vDate] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO

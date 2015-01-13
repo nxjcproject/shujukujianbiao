@@ -87,3 +87,68 @@ CREATE TABLE [dbo].[plan_EnergyConsumptionYearlyPlan](
 	[Remarks] [varchar](256) NULL
 )
 GO
+
+
+
+CREATE TABLE [dbo].[tz_Balance](
+	[BalanceId] [uniqueidentifier] PRIMARY KEY DEFAULT (newid()) NOT NULL,      --平衡ID
+	[BalanceName] [varchar](64) NOT NULL,                                       --平衡名称
+	[OrgnizationID] [varchar](64) NOT NULL,                                     --组织机构ID
+	[TemplateId] [varchar](64) NULL,                                            --所属模板
+	[TemplateType] [varchar](32) NULL,                                          --模板类型(Ammeter表示电力模板，Ouput物料模板)
+	[DataBaseName] [varchar](64) NULL,                                          --所属数据库名称
+	[DataTableName] [varchar](256) NOT NULL,                                    --所属表名
+	[StaticsCycle] [varchar](32) NOT NULL,                                      --统计周期
+	[TimeStamp] [varchar](32) NOT NULL,                                         --统计时间戳
+	[BalanceStatus] [int] DEFAULT (1) NOT NULL,                                 --平衡状态
+	[Editor] [varchar](32) NULL,                                                --编辑人
+	[EditTime] [datetime] DEFAULT NOT NULL,                                     --编辑时间
+	[Remarks] [varchar](256) NULL                                               --备注
+)
+GO
+
+
+CREATE TABLE [dbo].[balance_Energy](
+	[VariableItemId] [uniqueidentifier] PRIMARY KEY DEFAULT (newid()) NOT NULL, --行标识
+	[VariableId] [varchar](64) NOT NULL,                                        --变量ID
+	[VariableName] [varchar](64) NOT NULL,                                      --变量名称
+	[PublicVariableId] [varchar](64) NOT NULL,                                  --公共变量ID，用来为erp提供数据接口，与erp一致或者统一编码规则
+	[KeyId] [uniqueidentifier] NULL,                                            --Tz关键字，引领表ID
+	[OrgnizationID] [varchar](64) NOT NULL,                                     --组织机构ID
+	[ValueType] [varchar](32) NULL,                                             --值类型(分为)（用电量:  煤耗:  电耗:  能耗:）
+	[TotalPeakValleyFlat] [decimal](18, 4) default(0) NOT NULL,                 --峰谷平合计
+	[MorePeak] [decimal](18, 4) default(0) NOT NULL,                            --尖峰
+	[Peak] [decimal](18, 4) default(0) NOT NULL,                                --峰
+	[Valley] [decimal](18, 4) default(0) NOT NULL,                              --谷
+	[MoreValley] [decimal](18, 4) default(0) NOT NULL,                          --深谷
+	[Flat] [decimal](18, 4) default(0) NOT NULL,                                --平
+	[First] [decimal](18, 4) default(0) NOT NULL,                               --甲班
+	[Second] [decimal](18, 4) default(0) NOT NULL,                              --乙班
+	[Third] [decimal](18, 4) default(0) NOT NULL,                               --丙班
+	[TotalPeakValleyFlatB] [decimal](18, 4) default(0) NOT NULL,                --峰谷平合计（平衡后）
+	[MorePeakB] [decimal](18, 4) default(0) NOT NULL,                           --尖峰（平衡后）
+	[PeakB] [decimal](18, 4) default(0) NOT NULL,                               --峰（平衡后）
+	[ValleyB] [decimal](18, 4) default(0) NOT NULL,                             --谷（平衡后）
+	[MoreValleyB] [decimal](18, 4) default(0) NOT NULL,                         --深谷（平衡后）
+	[FlatB] [decimal](18, 4) default(0) NOT NULL,                               --平（平衡后）
+	[FirstB] [decimal](18, 4) default(0) NOT NULL,                              --甲班（平衡后）
+	[SecondB] [decimal](18, 4) default(0) NOT NULL,                             --乙班（平衡后）
+	[ThirdB] [decimal](18, 4) default(0) NOT NULL,                              --丙班（平衡后）
+)
+GO
+
+-- 调度日志
+CREATE TABLE [dbo].[shift_DispatchingLog](
+	[DispatchingLogItemId] [uniqueidentifier] NOT NULL,
+	[OrganizationID] [varchar](64) NOT NULL,
+	[DispatchingDate] [varchar](32) NOT NULL,
+	[DispatchtingText] [ntext] NULL,
+	[Creator] [varchar](32) NOT NULL,
+	[CreateTime] [datetime] NOT NULL,
+ CONSTRAINT [PK_shift_DispatchingLog] PRIMARY KEY CLUSTERED 
+(
+	[DispatchingLogItemId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
