@@ -191,8 +191,10 @@ CREATE TABLE [dbo].[table_ClinkerMonthlyOutput](            					-- 熟料生产
 	[AmounttoCoalDustConsumptionFirstShift] [decimal](18, 4) default(0) NULL,   -- 总用煤量甲班
 	[AmounttoCoalDustConsumptionSecondShift] [decimal](18, 4) default(0) NULL,
 	[AmounttoCoalDustConsumptionThirdShift] [decimal](18, 4) default(0) NULL,
-	[AmounttoCoalDustConsumptionSum] [decimal](18, 4) NULL
-
+	[AmounttoCoalDustConsumptionSum] [decimal](18, 4) NULL,
+	[RawBatch] [decimal](18, 8) DEFAULT (0) NULL,								-- 生料磨台时
+	[CoalDust] [decimal](18, 8) DEFAULT (0) NULL,								-- 煤磨台时
+	[Kiln] [decimal](18, 8) DEFAULT (0) NULL									-- 窑系统台时
 ) 
 GO
 
@@ -263,7 +265,8 @@ CREATE TABLE [dbo].[table_CementMillMonthlyOutput](         					-- 水泥生产
 	[CementProductionFirstShift] [decimal](18, 4) default(0) NULL,              -- 水泥产量甲班
 	[CementProductionSecondShift] [decimal](18, 4) default(0) NULL,
 	[CementProductionThirdShift] [decimal](18, 4) default(0) NULL,
-	[CementProductionSum] [decimal](18, 4) default(0) NULL
+	[CementProductionSum] [decimal](18, 4) default(0) NULL,
+	[Cementmill] [decimal](18, 8) DEFAULT (0) NULL								-- 水泥磨台时
 ) 
 GO
 
@@ -283,7 +286,8 @@ CREATE TABLE [dbo].[table_CementMillYearlyOutput](         						-- 水泥生产
 	[CementProductionFirstShift] [decimal](18, 4) default(0) NULL,              -- 水泥产量甲班
 	[CementProductionSecondShift] [decimal](18, 4) default(0) NULL,
 	[CementProductionThirdShift] [decimal](18, 4) default(0) NULL,
-	[CementProductionSum] [decimal](18, 4) default(0) NULL
+	[CementProductionSum] [decimal](18, 4) default(0) NULL,
+	[Cementmill] [decimal](18, 8) DEFAULT (0) NULL								-- 水泥磨台时
 )
 GO
 CREATE TABLE [dbo].[table_ClinkerMonthlyElectricity_sum](						-- 熟料生产线合计用电量统计月报表
