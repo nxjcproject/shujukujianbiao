@@ -20,6 +20,7 @@ CREATE TABLE [dbo].[DCSContrast](												-- DCS点号对照表
 	[CumulantName] [char](4) NULL,												-- 累积量名称（S501，注意以5开头，区别电表累积量，电表累积量以S001开始命名）
 	[MachineHour] DEFAULT(0) [bit] NOT NULL,									-- 存储是否是台时变量,非空，默认值为false
 	[ValidValues] [bit] NULL,													-- 存储台时变量有效值
+	[CumulantName_Report] [char](30) NULL,										-- 用于将现有累计量与需要做产量报表的累计量对应起来
 	[EquipmentName] [char](30) NULL,											-- 设备名称（如果标签对应设备，则此处填写设备名称） ？？？？？
 	[MasterOrSlave] [int] NULL,									                -- 是否是主从机（1代表主机;0代表从机;其他值暂无意义且无效）
 	[HaltID] [uniqueidentifier] NULL                                            -- 主从机的ID，与“DCS主机描述”表、“DCS从机描述”表内的ID列相对应
