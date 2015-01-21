@@ -131,3 +131,26 @@ CREATE TABLE [dbo].[system_SlaveMachineDescription](							-- DCS从机描述
 	[Remarks] [nvarchar](max) NULL							                    -- 备注
 )
 GO
+
+
+CREATE TABLE [dbo].[system_StatusNet](         									-- 系统状态信息表
+    [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL primary key , 			-- 主键ID
+    [Company][varchar](64) NULL,               									-- 分公司组织机构ID
+	[BranchFactory][varchar](64) NULL,         									-- 分厂组织机构ID
+	[IP][varchar](64) NULL,                    									-- 系统电脑IP
+	[Servers][varchar](32) NULL,               									-- 系统名称
+	[Status][varchar](32) NULL,                									-- 系统状态
+	[Timestamp][Datetime] null,                									-- 时间戳
+	[Remark][varchar](64) NULL                 									-- 备注
+)
+GO	
+
+
+CREATE TABLE [dbo].[system_StatusLog](                   						-- 系统状态信息日志表
+    [ID] [uniqueidentifier] DEFAULT(newid()) NOT NULL primary key,   			-- 主键ID
+    [vDate][Datetime] NULL,                              						-- 采样时间
+	[IP][varchar](64) NULL,                              						-- 系统电脑IP
+    [TypeEvents][varchar](32) NULL,                      						-- 事件类型
+	[NameEvents][varchar](32) NULL,                      						-- 事件名称
+)
+GO	

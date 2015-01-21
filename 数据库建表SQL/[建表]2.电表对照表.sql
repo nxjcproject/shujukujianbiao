@@ -9,23 +9,27 @@ CREATE TABLE [dbo].[AmmeterContrast](											-- 电表对照表
 	[AmmeterName] [char](30) NULL,												-- 电表名称
 	[AmmeterSource] [bit] NULL,													-- 电表来源（0表示来自串口，1表示来自电力需求侧）
 	[ElectricRoom] [char](40) NULL,												-- 所属电气室
-	[CommunicationProtocol ] [char](30) NULL,									-- 通讯协议
+	[CommunicationProtocol] [char](30) NULL,									-- 通讯协议
 	[AmmeterAddress] [char](30) NULL,											-- 电表地址
 	[CommPort] [int] NULL,														-- 通讯串口号
+	[IpAddress] [nchar](20) NULL,
+	[OPCName] [nchar](30) NULL,
+	[ElectricEnergyItem] [nchar](20) NULL,
+	[PowerItem] [nchar](20) NULL,
 	[CT] [int] NULL,															-- 电压互感器变比
 	[PT] [int] NULL,															-- 电流互感器变比
-	[EnabledFlag] [bit] NULL,													-- 电表启用标志位
-	[ElectricEnergyFlag] [bit] NULL,											-- 读电能启用标志位
-	[PowerFlag] [bit] NULL,														-- 读功率启用标志位
+	[EnabledFlag] [bit] DEFAULT(1) NULL,										-- 电表启用标志位
+	[ElectricEnergyFlag] [bit] DEFAULT(1) NULL,									-- 读电能启用标志位
+	[PowerFlag] [bit] DEFAULT(1) NULL,											-- 读功率启用标志位
 	[BreakdownFlag] [bit] NULL,													-- 故障标志位
-	[ElectricEnergyTableName_e] [char](30) NULL,								-- 电力需求侧端-电能存储表名
-	[ElectricEnergyFieldName_e] [char](30) NULL,								-- 电力需求侧端-电能存储字段名
-	[PowerTableName_e] [char](30) NULL,											-- 电力需求侧端-电能存储表名
-	[PowerFieldName_e] [char](30) NULL,											-- 电力需求侧端-功率存储字段名
-	[ElectricEnergyFieldName_s] [char](30) NULL,								-- 电能存储字段名
-	[PowerFieldName_s] [char](30) NULL,											-- 功率存储字段名
-	[IsCumulant] [bit] NULL,													-- 是否是累计量
-	[CumulantName] [char](4) NULL,												-- 累积量名称（S001，注意以0开头，区别DCS累积量，DCS累积量以S501开始命名）
+	[ElectricEnergyTableNameDSM] [char](30) NULL,								-- 电力需求侧端-电能存储表名
+	[ElectricEnergyFieldNameDSM] [char](30) NULL,								-- 电力需求侧端-电能存储字段名
+	[PowerTableNameDSM] [char](30) NULL,										-- 电力需求侧端-电能存储表名
+	[PowerFieldNameDSM] [char](30) NULL,										-- 电力需求侧端-功率存储字段名
+	[ElectricEnergyFieldNameSave] [char](30) NULL,								-- 电能存储字段名
+	[PowerFieldNameSave] [char](30) NULL,										-- 功率存储字段名
+	[Status] [varchar](8) NULL,													-- 电表当前状态  取值：正常读取，不能读取
+	[TimeStatusChange] [datetime] NULL											-- 当前状态时间
 )
 GO
 
