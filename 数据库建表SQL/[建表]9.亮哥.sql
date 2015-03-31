@@ -104,6 +104,9 @@ CREATE TABLE [dbo].[tz_Balance](
 	[Editor] [varchar](32) NULL,                                                --编辑人
 	[EditTime] [datetime] DEFAULT NOT NULL,                                     --编辑时间
 	[Remarks] [varchar](256) NULL                                               --备注
+	[FirstWorkingTeam][nchar(2)] NULL,											--甲班对应的班组
+	[SecondWorkingTeam][nchar(2)] NULL,											--乙班对应的班组
+	[ThirdWorkingTeam][nchar(2)] NULL,											--丙班对应的班组
 )
 GO
 

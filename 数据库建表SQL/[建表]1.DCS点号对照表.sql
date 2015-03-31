@@ -38,5 +38,6 @@ CREATE TABLE [dbo].[EnergyConsumptionContrast](									-- 能耗监控画面对照表
 	[FieldName] [char](30) NULL,												-- 数据存储字段名称
 	[Item] [char](30) NULL,														-- 标签/电表编号/公式
 	[value] [decimal](18, 2) NULL,												-- 值
+	[Enabled][bit] NOT NULL														-- 是否有效
 )
 GO
